@@ -8,7 +8,12 @@ function moveAround(id, speed)
     var x = Math.floor(Math.random() * ($(document).width() - 200));
     var y = Math.floor(Math.random() * ($(document).height() - 200));
 
-    $(id).animate({top: y, left: x}, speed, function() {moveAround(id, speed)} );
+    $(id).animate({
+        top: y,
+        left: x},
+        speed,
+        function() {moveAround(id, speed)}
+        );
 };
 
 $(document).ready(function () {
