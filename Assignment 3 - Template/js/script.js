@@ -1,18 +1,12 @@
-//GETTING A RANDOM VALUE
-//Math.random() returns a value between range [0,1), max and min are changing that range [min, max).
-//First it multiplies the difference between max and min by a number between range [0,1)
-//so it's never more than the difference between max and min, and then it adds min.
-//Then returns an int.
-function getRandom(min, max) {
-    return Math.floor(Math.random() * (max - min) + min);
-};
-
 //BOTH MOVEMENTS
-//1. Slowly move around in random directions.
+//SLOWLY MOVE AROUND IN RANDOM DIRECTIONS
+//Math.random() returns a value between range [0,1), the result is multiplied by page dimensions.
+//Subtracting 200px from the document size because the biggest fish image dimension is 200px.
+//Returns as an int (floors the result).
 function moveAround(id, speed)
 {
-    var x = getRandom(0, $(document).width() - 100);
-    var y = getRandom(0, $(document).height() - 100);
+    var x = Math.floor(Math.random() * ($(document).width() - 200));
+    var y = Math.floor(Math.random() * ($(document).height() - 200));
 
     $(id).animate({top: y, left: x}, speed, function() {moveAround(id, speed)} );
 };
