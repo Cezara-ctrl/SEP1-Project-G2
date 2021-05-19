@@ -14,14 +14,14 @@ function moveAround(id, speed)
     var x = getRandom(0, $(document).width() - 150);
     var y = getRandom(0, $(document).height() - 150);
 
-    $(id).animate({top: y, left: x}, speed, function() {fishMoves(id, speed)} );
+    $(id).animate({top: y, left: x}, speed, function() {moveAround(id, speed)} );
 };
 
 $(document).ready(function () {
-    fishMoves("#fish1Id", 6100)
+    moveAround("#fish1Id", 6100)
 });
 
 $(document).ready(function () {
-    fishMoves("#fish2Id", 6500)
+    moveAround("#fish2Id", 6500)
 });
 
