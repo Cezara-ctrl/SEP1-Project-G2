@@ -9,6 +9,9 @@ function moveAround(id, speed)
     var x = Math.floor(Math.random() * ($(document).width() - 250));
     var y = Math.floor(Math.random() * ($(document).height() - 250));
 
+    //EXTRA FUNCTIONALITY
+    //FLIPPING THE FISH ACCORDING TO THE MOVEMENT DIRECTION
+    //Depending on position it adds or removes a CSS class responsible for flipping an image.
     if($(id).position().left >= x)
     {    
         $(id).addClass('flip');
