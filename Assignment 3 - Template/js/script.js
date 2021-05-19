@@ -3,6 +3,7 @@
 //Math.random() returns a value between range [0,1), the result is multiplied by page dimensions.
 //Subtracting 200px from the document size because the biggest fish image dimension is 200px.
 //Returns as an int (floors the result).
+//To move slowly, put a higher value for speed for a fish.
 function moveAround(id, speed)
 {
     var x = Math.floor(Math.random() * ($(document).width() - 200));
@@ -22,5 +23,10 @@ $(document).ready(function () {
 
 $(document).ready(function () {
     moveAround("#fish2Id", 7000)
+});
+
+//EXTRA FUNCTIONALITY NO.1 - EXTRA FLIPPING FISH THAT'S FAST
+$(document).ready(function () {
+    moveAround("#fish3Id", 2000)
 });
 
