@@ -11,17 +11,17 @@ function getRandom(min, max) {
 //1. Slowly move around in random directions.
 function moveAround(id, speed)
 {
-    var x = getRandom(0, $(document).width() - 1);
-    var y = getRandom(0, $(document).height() - 1);
+    var x = getRandom(0, $(document).width() - 100);
+    var y = getRandom(0, $(document).height() - 100);
 
     $(id).animate({top: y, left: x}, speed, function() {moveAround(id, speed)} );
 };
 
 $(document).ready(function () {
-    moveAround("#fish1Id", 3000)
+    moveAround("#fish1Id", 6000)
 });
 
 $(document).ready(function () {
-    moveAround("#fish2Id", 6000)
+    moveAround("#fish2Id", 7000)
 });
 
