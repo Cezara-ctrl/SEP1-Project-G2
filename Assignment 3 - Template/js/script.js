@@ -1,13 +1,22 @@
 //BOTH MOVEMENTS
 //SLOWLY MOVE AROUND IN RANDOM DIRECTIONS
 //Math.random() returns a value between range [0,1), the result is multiplied by page dimensions.
-//Subtracting 200px from the document size because the biggest fish image dimension is 200px.
+//Subtracting 250px from the document size because the biggest fish image dimension is 200px.
 //Returns as an int (floors the result).
 //To move slowly, put a higher value for speed for a fish.
 function moveAround(id, speed)
 {
-    var x = Math.floor(Math.random() * ($(document).width() - 200));
-    var y = Math.floor(Math.random() * ($(document).height() - 200));
+    var x = Math.floor(Math.random() * ($(document).width() - 250));
+    var y = Math.floor(Math.random() * ($(document).height() - 250));
+
+    if($(id).position().left >= x)
+    {    
+        $(id).addClass('flip');
+    }
+    else
+    {
+        $(id).removeClass('flip');
+    }
 
     $(id).animate({
         top: y,
@@ -15,6 +24,7 @@ function moveAround(id, speed)
         speed,
         function() {moveAround(id, speed)}
         );
+
 };
 
 $(document).ready(function () {
@@ -25,7 +35,7 @@ $(document).ready(function () {
     moveAround("#fish2Id", 7000)
 });
 
-//EXTRA FUNCTIONALITY NO.1 - EXTRA FLIPPING FISH THAT'S FAST
+//EXTRA FISH
 $(document).ready(function () {
     moveAround("#fish3Id", 2000)
 });

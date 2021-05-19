@@ -25,3 +25,8 @@ img {
     width: 100px;
     height: 100px;
 }
+
+.flip {
+    -webkit-transform: scaleX(-1);
+    transform: scaleX(-1);
+}
