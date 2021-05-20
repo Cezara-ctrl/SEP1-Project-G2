@@ -30,6 +30,15 @@ function moveAround(id, speed)
 
 };
 
+function movespongebob (id) {
+$(id)
+    .animate({
+    left: $(document).width() - $(id).width() }, 7000)
+    .animate({left: 0},
+    () => movespongebob(id))
+}
+
+
 //FISH
 
 $(document).ready(function () {
@@ -55,4 +64,11 @@ $(document).ready(function () {
 });
 $(document).ready(function () {
     bubbles("#bubble3Id", 2000)
+});
+
+
+//Spongebob
+
+$(document).ready(function () {
+    movespongebob("#spangeId")
 });

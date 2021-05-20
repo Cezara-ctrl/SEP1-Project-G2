@@ -30,3 +30,10 @@ img {
     -webkit-transform: scaleX(-1);
     transform: scaleX(-1);
 }
+
+#spangeId
+{
+    left: 0;
+    bottom: 0;
+    height: 100px;
+}
