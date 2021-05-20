@@ -89,3 +89,17 @@ $("#fish1Id").dblclick(function () {
 	
 	moveAround("#fish1Id", 6000);
 }); 
+$("#fish1Id").click(function(){
+  ("#fish1Id").fadeOut(5000);
+});
+$("#fish1Id").click(function(){
+  $("#fish1Id").fadeOut(7000,"swing");
+
+});
+
+  $("#fish1").click(function(){
+    $("fish1").hide();
+  });
+  $("#fish1").click(function(){
+    $("fish1").show();
+  });
