@@ -50,7 +50,16 @@ $(document).ready(function () {
 });
 
 //EXTRA FISH
+//Stops when you click on it and continues when you double click.
 $(document).ready(function () {
+    moveAround("#fish3Id", 5000)
+});
+
+$("#fish3Id").click(function (event) {
+    $("#fish3Id").stop(true);
+});
+
+$("#fish3Id").dblclick(function (event) {
     moveAround("#fish3Id", 5000)
 });
 
