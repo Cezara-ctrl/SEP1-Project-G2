@@ -40,6 +40,6 @@ $(document).ready(function () {
 
 //EXTRA FISH
 $(document).ready(function () {
-    moveAround("#fish3Id", 2000)
+    moveAround("#fish3Id", 5000)
 });
 

@@ -1,6 +1,6 @@
 var objImage= null;
 	function init(){
-		objImage=document.getElementById("fish1");				
+		objImage=document.getElementById("fish1Id");				
 		objImage.style.position='relative';
 		objImage.style.left='0px';
 		objImage.style.top='0px';
@@ -36,7 +36,7 @@ var objImage= null;
 	}
 	window.onload=init;
     function zoomin(){
-        var myImg = document.getElementById("fish1");
+        var myImg = document.getElementById("fish1Id");
         var currWidth = myImg.clientWidth;
          myImg.style.width = (currWidth + 100) + "px";
         
@@ -48,8 +48,8 @@ var objImage= null;
             myImg.style.width = (currWidth ) + "px";
         
     }
-    $("fish1").click(function(){
-        $("fish1").animate({
+    $("fish1Id").click(function(){
+        $("fish1Id").animate({
           height: 'toggle'
         });
       });
