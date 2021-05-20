@@ -30,6 +30,8 @@ function moveAround(id, speed)
 
 };
 
+//FISH
+
 $(document).ready(function () {
     moveAround("#fish1Id", 6000)
 });
@@ -43,3 +45,14 @@ $(document).ready(function () {
     moveAround("#fish3Id", 5000)
 });
 
+//BUBBLES
+
+$(document).ready(function () {
+    bubbles("#bubble1Id", 5000)
+});
+$(document).ready(function () {
+    bubbles("#bubble2Id", 8000)
+});
+$(document).ready(function () {
+    bubbles("#bubble3Id", 2000)
+});
