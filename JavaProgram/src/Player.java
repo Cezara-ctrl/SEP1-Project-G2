@@ -13,7 +13,7 @@ public class Player
     this.name=name;
     this.number=number;
     this.position=position;
-    substitute=false;
+    this.substitute=substitute;
     birthday=birthday.copy();
 
 
