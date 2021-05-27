@@ -8,12 +8,13 @@ public class Match
   private String type;
   private Team team;
 
-  public Match(Date date, Time time, String place, String type)
+  public Match(Date date, Time time, String place, String type, Team team)
   {
     this.date = date;
     this.time = time;
     this.place = place;
     this.type = type;
+    this.team = team;
   }
 
   public Date getDate()
@@ -39,7 +40,7 @@ public class Match
   public boolean hasValidDate()
   {
     boolean valDate = true;
-    if(date.getDate().isBefore(Date.today()))
+    if(getDate().isBefore(Date.today()))
     {
       valDate = false;
     }
@@ -49,7 +50,7 @@ public class Match
   public boolean hasValidType()
   {
     boolean valType = false;
-    if(type == "League" || type == "Cup" || type == "Friendly")
+    if(type.equals("League") || type.equals("Cup") || type.equals("Friendly"))
     {
       valType = true;
     }
@@ -58,7 +59,25 @@ public class Match
 
   public boolean hasValidPlayersForType()
   {
+    boolean valSubs = false;
+    int substitutes = 0;
+    for(int i=0; i<team.getNumberOfPlayers(); i++)
+    {
+      if(team.getPlayers().get(i).isSubstitute())
+      {
+        substitutes+=1;
+      }
+    }
 
+    if(getType().equals("League") && substitutes==5)
+    {
+      valSubs = true;
+    }
+    else if(getType().equals("Cup") && substitutes==6)
+    {
+      valSubs = true;
+    }
+    return valSubs;
   }
 
   public void addTeam(Team t)
