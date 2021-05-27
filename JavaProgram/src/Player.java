@@ -4,11 +4,11 @@ public class Player
 {
   private  String name;
   private int number;
-  private int position;
+  private String position;
   private boolean substitute;
   private Date birthday;
 
-  public Player(String name, int number, int position, boolean substitute, Date birthday)
+  public Player(String name, int number, String position, boolean substitute, Date birthday)
   {
     this.name=name;
     this.number=number;
@@ -27,7 +27,7 @@ public class Player
     return number;
   }
 
-  public int getPosition()
+  public String getPosition()
   {
     return position;
   }
