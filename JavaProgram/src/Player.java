@@ -42,7 +42,7 @@ public class Player
     {
       str="substitute";
     }
-    return "name: "+name+" ,number:"+number+" ,position: "+position+" ,substitute:"+ substitute+ str+" ,birthday"+birthday;
+    return "name: "+name+" ,number:"+number+" ,position: "+position+" ,substitute:"+ substitute+ str;
   }
 
 
