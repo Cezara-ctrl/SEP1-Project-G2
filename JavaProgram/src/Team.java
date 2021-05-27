@@ -15,7 +15,7 @@ public void removePlayer(Player player){
     players.remove(player);
 }
 public int getNumberOfPlayers(){
-    return players.size;
+    return players.size();
 }
     public boolean equals(Object obj)
     {
