@@ -42,53 +42,6 @@ public class Time
     return hour;
   }
 
-  public boolean isBefore(Time time2)
-  {
-    if(hour < time2.minute)
-    {
-      return true;
-    }
-    else if(hour > time2.minute)
-    {
-      return false;
-    }
-    else
-    {
-      if(minute < time2.minute)
-      {
-        return true;
-      }
-      else if(minute > time2.minute)
-      {
-        return false;
-      }
-      else
-      {
-        if(second < time2.second)
-        {
-          return true;
-        }
-        else
-        {
-          return false;
-        }
-      }
-    }
-  }
-
-  public Time timeUntil(Time time2)
-  {
-    int time2InSeconds = time2.convertToSeconds();
-    int currentSeconds = convertToSeconds();
-    int secondsUntil = time2InSeconds - currentSeconds ;
-    time2.hour = secondsUntil / 3600;
-    secondsUntil = secondsUntil - time2.hour * 3600;
-    time2.minute = secondsUntil / 60;
-    secondsUntil = secondsUntil - time2.minute * 60;
-    time2.second = secondsUntil;
-    return time2;
-  }
-
   public Time copy()
   {
     return new Time(hour, minute, second);
