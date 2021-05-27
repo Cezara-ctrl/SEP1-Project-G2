@@ -15,8 +15,6 @@ public class Player
     this.position=position;
     this.substitute=substitute;
     birthday=birthday.copy();
-
-
   }
 
   public String getName()
@@ -38,10 +36,14 @@ public class Player
   {
     return substitute;
   }
-  public Date getBirthday(){
+
+  public Date getBirthday()
+  {
     return birthday.copy();
   }
-  public String toString(){
+
+  public String toString()
+  {
     String str=name;
     if(substitute)
     {
