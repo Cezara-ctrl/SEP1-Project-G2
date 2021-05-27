@@ -6,15 +6,13 @@ public class Player
   private int number;
   private String position;
   private boolean substitute;
-  private Date birthday;
 
-  public Player(String name, int number, String position, boolean substitute, Date birthday)
+  public Player(String name, int number, String position, boolean substitute)
   {
     this.name=name;
     this.number=number;
     this.position=position;
     this.substitute=substitute;
-    this.birthday=birthday.copy();
   }
 
   public String getName()
@@ -35,11 +33,6 @@ public class Player
   public boolean isSubstitute()
   {
     return substitute;
-  }
-
-  public Date getBirthday()
-  {
-    return birthday.copy();
   }
 
   public String toString()
