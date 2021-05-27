@@ -79,12 +79,6 @@ public class Date
     }
   }
 
-  public Date timeUntil(Date date2)
-  {
-
-
-  }
-
   public void nextDay()
   {
     if(month == 12 && day == 31)

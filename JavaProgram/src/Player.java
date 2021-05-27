@@ -4,19 +4,15 @@ public class Player
 {
   private  String name;
   private int number;
-  private int position;
+  private String position;
   private boolean substitute;
-  private Date birthday;
 
-  public Player(String name, int number, int position, boolean substitute, Date birthday)
+  public Player(String name, int number, String position, boolean substitute)
   {
     this.name=name;
     this.number=number;
     this.position=position;
     this.substitute=substitute;
-    birthday=birthday.copy();
-
-
   }
 
   public String getName()
@@ -29,7 +25,7 @@ public class Player
     return number;
   }
 
-  public int getPosition()
+  public String getPosition()
   {
     return position;
   }
@@ -38,16 +34,14 @@ public class Player
   {
     return substitute;
   }
-  public Date getBirthday(){
-    return birthday.copy();
-  }
+
   public String toString(){
     String str=name;
     if(substitute)
     {
       str="substitute";
     }
-    return "name: "+name+" ,number:"+number+" ,position: "+position+" ,substitute:"+ substitute+ str+" ,birthday"+birthday;
+    return "name: "+name+" ,number:"+number+" ,position: "+position+" ,substitute:"+ substitute+ str;
   }
 
 
