@@ -56,15 +56,24 @@ public class Match
   public boolean hasValidPlayersForType()
   {
     boolean valSubs = false;
+    boolean valSus = false;
+    boolean valPlayers = false;
     int substitutes = 0;
+
+    //Counting the number of substitutes in the team.
     for(int i=0; i<team.getNumberOfPlayers(); i++)
     {
       if(team.getPlayers().get(i).isSubstitute())
       {
         substitutes+=1;
       }
+      if(team.getPlayers().get(i).isSuspended())
+      {
+        valSus = true;
+      }
     }
 
+    //Checking if the number of substitutes is correct.
     if(getType().equals("League") && substitutes==5)
     {
       valSubs = true;
@@ -73,7 +82,17 @@ public class Match
     {
       valSubs = true;
     }
-    return valSubs;
+
+    //Checking if there are suspended players and if they can participate in a match.
+    if(getType().equals("League") && !valSus && valSubs || getType().equals("Cup") && !valSus && valSubs)
+    {
+      valPlayers = true;
+    }
+    else if(getType().equals("Friendly"))
+    {
+      valPlayers = true;
+    }
+    return valPlayers;
   }
 
   public void addTeam(Team t)

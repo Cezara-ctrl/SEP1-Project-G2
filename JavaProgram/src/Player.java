@@ -6,13 +6,15 @@ public class Player
   private int number;
   private String position;
   private boolean substitute;
+  private boolean suspended;
 
-  public Player(String name, int number, String position, boolean substitute)
+  public Player(String name, int number, String position, boolean substitute, boolean suspended)
   {
     this.name=name;
     this.number=number;
     this.position=position;
     this.substitute=substitute;
+    this.suspended=suspended;
   }
 
   public String getName()
@@ -33,6 +35,11 @@ public class Player
   public boolean isSubstitute()
   {
     return substitute;
+  }
+
+  public boolean isSuspended()
+  {
+    return suspended;
   }
 
   public String toString(){
