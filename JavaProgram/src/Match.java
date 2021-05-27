@@ -39,11 +39,7 @@ public class Match
 
   public boolean hasValidDate()
   {
-    boolean valDate = true;
-    if(getDate().isBefore(Date.today()))
-    {
-      valDate = false;
-    }
+    boolean valDate = !getDate().isBefore(Date.today());
     return valDate;
   }
 

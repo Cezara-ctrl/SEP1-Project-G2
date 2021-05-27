@@ -21,12 +21,8 @@ public class Team {
         return players.size();
     }
 
-    public ArrayList<Player> getAllPlayers() {
-        ArrayList<Player> players1 = new ArrayList<>();
-        for (int i = 0; i < players.size(); i++) {
-            players1.add(players.get(i));
-        }
-        return players1;
+    public ArrayList<Player> getPlayers() {
+        return players;
     }
 
     public boolean equals(Object obj) {
