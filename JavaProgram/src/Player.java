@@ -14,7 +14,7 @@ public class Player
     this.number=number;
     this.position=position;
     this.substitute=substitute;
-    birthday=birthday.copy();
+    this.birthday=birthday.copy();
   }
 
   public String getName()
