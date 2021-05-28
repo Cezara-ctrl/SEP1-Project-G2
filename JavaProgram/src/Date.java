@@ -106,6 +106,61 @@ public class Date
     }
   }
 
+  private int daysInMonth()
+  {
+    LocalDate dateToCountMonthDays = LocalDate.of(year,month,day);
+    int daysInMonth = dateToCountMonthDays.lengthOfMonth();
+    return daysInMonth;
+  }
+
+  public int timeUntil(Date date)
+  {
+    Date dateBefore = copy();
+    Date dateAfter = date;
+    int daysBetween = 0;
+    int y;
+    Date yDate = dateBefore;
+    int m;
+    Date mDate = dateBefore;
+    for (y = yDate.year; y < dateAfter.year; y++)
+    {
+      if(yDate.isLeapYear())
+      {
+        daysBetween+=366;
+      }
+      else
+      {
+        daysBetween+=365;
+      }
+      yDate.year++;
+    }
+    if(dateBefore.month < dateAfter.month)
+    {
+      for(m = mDate.month; m < dateAfter.month; m++)
+      {
+        daysBetween+=mDate.daysInMonth();
+        mDate.month++;
+      }
+    }
+    else if(dateBefore.month > dateAfter.month)
+    {
+      for(m = mDate.month; m < dateAfter.month; m++)
+      {
+        daysBetween-=mDate.daysInMonth();
+        mDate.month++;
+      }
+    }
+    if(dateBefore.day < dateAfter.day)
+    {
+      daysBetween+=dateAfter.day-dateBefore.day;
+    }
+    else if(dateBefore.day > dateAfter.day)
+    {
+      daysBetween-=dateBefore.day-dateAfter.day;
+    }
+    return daysBetween;
+  }
+
   public Date copy()
   {
     return new Date(day, month, year);
