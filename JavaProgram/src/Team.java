@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.Objects;
 
 public class Team {
     private ArrayList<Player> players = new ArrayList<Player>();
@@ -25,14 +26,15 @@ public class Team {
         return players;
     }
 
-    public boolean equals(Object obj) {
-        if (this == obj)
-            return true;
-        if (obj == null || getClass() != obj.getClass())
-            return false;
-        Team team = (Team) obj;
-        return players == team.players && numberOfPlayers == team.numberOfPlayers;
+
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Team team = (Team) o;
+        return numberOfPlayers == team.numberOfPlayers && Objects.equals(players, team.players);
     }
+
+
 
     public String toString() {
         return "Players" + players + "Number of the players" + numberOfPlayers;
