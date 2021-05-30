@@ -61,13 +61,14 @@ public class Match
     int substitutes = 0;
 
     //Counting the number of substitutes in the team.
+    //Checking if there are suspended players in the team.
     for(int i=0; i<team.getNumberOfPlayers(); i++)
     {
       if(team.getPlayers().get(i).isSubstitute())
       {
         substitutes+=1;
       }
-      if(team.getPlayers().get(i).isSuspended())
+      if(team.getPlayers().get(i) instanceof SuspendedPlayer)
       {
         valSus = true;
       }
@@ -83,7 +84,7 @@ public class Match
       valSubs = true;
     }
 
-    //Checking if there are suspended players and if they can participate in a match.
+    //Checking if there are correct amounts of player types assigned to the match.
     if(getType().equals("League") && !valSus && valSubs || getType().equals("Cup") && !valSus && valSubs)
     {
       valPlayers = true;
