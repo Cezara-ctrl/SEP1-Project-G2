@@ -7,7 +7,7 @@ public class Test
     Player player1 = new Player("a",1,"pos",true, true);
     Player player2 = new Player("a",2,"pos",true, false);
     Player player3 = new Player("a",3,"pos",true, false);
-    Player player4 = new Player("a",4,"pos",true,false);
+    Player player4 = new Player("a",4,"pos",false,false);
     Player player5 = new Player("a",5,"pos",true, false);
     Player player6 = new Player("a",6,"pos",false, false);
     ArrayList<Player> players = new ArrayList<Player>();
