@@ -17,13 +17,7 @@ public class Test
     SuspendedPlayer player7 = new SuspendedPlayer("a",7,"pos",false,true,date1);
     ArrayList<Player> players = new ArrayList<Player>();
 
-    Team team1 = new Team(players, 6);
-    team1.addPlayer(player1);
-    team1.addPlayer(player2);
-    team1.addPlayer(player3);
-    team1.addPlayer(player4);
-    team1.addPlayer(player5);
-    team1.addPlayer(player6);
+    Team team1 = new Team()
     team1.addPlayer(player7);
 
     Match match1 = new Match(date1, time1, "Some place", "Friendly", team1);

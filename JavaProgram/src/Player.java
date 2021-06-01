@@ -1,20 +1,29 @@
-import java.util.Date;
-
-public class Player
+public abstract class Player
 {
-  private  String name;
-  private int number;
+  private String name;
+  private String number;
   private String position;
-  private boolean substitute;
-  private boolean suspended;
 
-  public Player(String name, int number, String position, boolean substitute,boolean suspended)
+  public Player(String name, String number, String position)
   {
-    this.name=name;
-    this.number=number;
-    this.position=position;
-    this.substitute=substitute;
-    this.suspended=suspended;
+    this.name = name;
+    this.number = number;
+    this.position = position;
+  }
+
+  public void setName(String name)
+  {
+    this.name = name;
+  }
+
+  public void setNumber(String number)
+  {
+    this.number = number;
+  }
+
+  public void setPosition(String position)
+  {
+    this.position = position;
   }
 
   public String getName()
@@ -22,7 +31,7 @@ public class Player
     return name;
   }
 
-  public int getNumber()
+  public String getNumber()
   {
     return number;
   }
@@ -32,24 +41,20 @@ public class Player
     return position;
   }
 
-  public boolean isSubstitute()
+  public boolean equals(Object obj)
   {
-    return substitute;
-  }
-
-  public boolean isSuspended()
-  {
-    return suspended;
-  }
-
-  public String toString(){
-    String str=name;
-    if(substitute)
+    if(!(obj instanceof Player))
     {
-      str="substitute";
+      return false;
     }
-    return "name: "+name+" ,number:"+number+" ,position: "+position+" ,substitute:"+ substitute+ str;
+
+    Player other = (Player) obj;
+
+    return name.equals(other.name) && number.equals(other.number) && position.equals(other.position);
   }
 
-
+  public String toString()
+  {
+    return "Name: " + name + ". Number: " + number + ". Position: " + position + ".";
+  }
 }
