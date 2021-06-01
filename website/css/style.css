@@ -1,0 +1,177 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins:400:500:700');
+
+* {
+  padding: 0;
+  margin: 0;
+  text-decoration: none;
+  list-style: none;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: montserrat;
+}
+
+#myCarousel {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.carousel-inner img {
+  height: 500px;
+  width: auto;
+}
+
+.carousel-item h3 {
+  margin: auto;
+  color: rgb(255, 255, 255);
+}
+
+nav {
+  z-index: 1;
+}
+
+.navbar-brand img {
+  max-height: 70px;
+  max-width: auto;
+}
+
+nav ul li {
+  text-transform: uppercase;
+}
+
+.nav-link:hover {
+  background: #e60073;
+  transition: .5s;
+}
+
+.card img {
+  min-height: 300px;
+  width: auto;
+}
+
+html,body {
+  height: 100%;
+  width: 100%;
+  font-family: 'Poppins', sans-serif;
+  color: #222; 
+}
+
+hr.light {
+    width: 75%;
+    margin-top: .8rem;
+    margin-bottom: 1rem;
+}
+
+hr.light-100 {
+    width: 100%;
+    margin-top: .8rem;
+    margin-bottom: 1rem;
+}
+
+.display-4 {
+    font-size: 200%;
+}
+
+.about-section {
+    background: url(../images/pic.jpg.jpg) no-repeat left;
+    background-size: 55%;
+    background-color: #fdfdfd;
+    overflow: hidden;
+    padding: 100px 0;
+}
+
+.inner-container {
+    width: 55%;
+    float: right;
+    background-color: #fdfdfd;
+    padding: 150px;
+}
+
+.inner-container h1 {
+    margin-bottom: 30px;
+    font-size: 30px;
+    font-weight: 900;
+}
+
+.text {
+    font-family: sans-serif ;
+    color: #545454;
+    line-height: 30px;
+    text-align: justify;
+    margin-bottom: 40px;
+}
+
+.container-fluid {
+    width: 100%;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+@media screen and (max-width:1200px) {
+    .inner-container{
+        padding: 80px;
+    }
+}
+
+@media screen and (max-width:1000px) {
+    .about-section{
+        background-size: 100%;
+        padding: 100px 40px;
+    }
+    .inner-container{
+        width: 100%;
+    } 
+}
+
+@media screen and (max-width:600px) {
+    .about-section{
+        padding: 0;
+    }
+    .inner-container{
+        padding: 60px;
+    }
+
+    #myCarousel {
+      margin-top: 0px;
+      margin-bottom: 0px;
+    }
+    .carousel-inner img {
+      width: 100%;
+      max-height: 300px;
+    }
+}
+
+/* NOTIFICATION BAR */
+
+.notify-success {
+  position:relative;
+  width:100%;
+  background-color:green;
+  height:30px;
+  color:white;
+  display:none;
+  text-align:center;
+  padding:5px;
+  font-size:2em;
+  line-height:1em;
+  font-family: Arial, sans-serif;
+  border:2px solid #666;
+  cursor:pointer;
+}
+
+.notify-error {
+  position:relative;
+  width:100%;
+  background-color:red;
+  height:30px;
+  color:white;
+  display:none;
+  text-align:center;
+  padding:5px;
+  font-size:2em;
+  line-height:1em;
+  font-family: Arial, sans-serif;
+  border:2px solid #666;
+  cursor:pointer;
+}
