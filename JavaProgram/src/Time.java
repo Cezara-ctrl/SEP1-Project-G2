@@ -11,25 +11,24 @@ public class Time
     this.second = second;
   }
 
-  public Time(int totalTimeInSeconds)
+  public void setHour(int hour)
   {
-    hour = totalTimeInSeconds / 3600;
-    totalTimeInSeconds -= 3600 * hour;
-
-    minute = totalTimeInSeconds / 60;
-    totalTimeInSeconds -= 60 * minute;
-
-    second = totalTimeInSeconds;
+    this.hour = hour;
   }
 
-  public int convertToSeconds()
+  public void setMinute(int minute)
   {
-    return hour * 3600 + minute * 60 + second;
+    this.minute = minute;
   }
 
-  public int getSecond()
+  public void setSecond(int second)
   {
-    return second;
+    this.second = second;
+  }
+
+  public int getHour()
+  {
+    return hour;
   }
 
   public int getMinute()
@@ -37,9 +36,9 @@ public class Time
     return minute;
   }
 
-  public int getHour()
+  public int getSecond()
   {
-    return hour;
+    return second;
   }
 
   public Time copy()
@@ -63,5 +62,6 @@ public class Time
   {
     return hour + ":" + minute + ":" + second;
   }
+
 
 }

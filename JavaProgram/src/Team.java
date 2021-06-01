@@ -1,42 +1,45 @@
 import java.util.ArrayList;
-import java.util.Objects;
 
-public class Team {
-    private ArrayList<Player> players = new ArrayList<Player>();
-    private int numberOfPlayers;
+public class Team
+{
+  private int numberOfPlayers;
+  private ArrayList<Player> allPlayers;
+  private Player number;
 
-    public Team(ArrayList<Player> players, int numberOfPlayers) {
-        this.numberOfPlayers = numberOfPlayers;
-        this.players = players;
-    }
+  public Team(int numberOfPlayers, ArrayList<Player> allPlayers)
+  {
+    this.numberOfPlayers = numberOfPlayers;
+    this.allPlayers = allPlayers;
+  }
 
-    public void addPlayer(Player player) {
-        players.add(player);
-    }
+  public void addPlayer(Player player)
+  {
+    allPlayers.add(player);
+  }
 
-    public void removePlayer(Player player) {
-        players.remove(player);
-    }
+  public Player getNumber()
+  {
+    return number;
+  }
 
-    public int getNumberOfPlayers() {
-        return players.size();
-    }
+  public void removePlayer(Player player)
+  {
+    allPlayers.remove(player);
+  }
 
-    public ArrayList<Player> getPlayers() {
-        return players;
-    }
+  public int getNumberOfPlayers()
+  {
+    return numberOfPlayers;
+  }
 
+  public ArrayList<Player> getAllPlayers()
+  {
+    return allPlayers;
+  }
 
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        Team team = (Team) o;
-        return numberOfPlayers == team.numberOfPlayers && Objects.equals(players, team.players);
-    }
+  public String toString()
+  {
+    return "Number of players: " + numberOfPlayers + ". Players: " + allPlayers;
+  }
 
-
-
-    public String toString() {
-        return "Players" + players + "Number of the players" + numberOfPlayers;
-    }
 }
