@@ -62,4 +62,5 @@ public class SuspendedPlayer extends Player
   {
     return super.toString();
   }
+
 }

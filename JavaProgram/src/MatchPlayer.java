@@ -45,4 +45,5 @@ public class MatchPlayer
   {
     return "Player: " + player + ". Type: " + type;
   }
+
 }
