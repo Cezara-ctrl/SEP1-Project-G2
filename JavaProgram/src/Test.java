@@ -8,13 +8,13 @@ public class Test
     Date date2 = new Date(1,7,2021);
     Time time1 = new Time(12,30,0);
 
-    Player player1 = new Player("a",1,"pos",true);
-    Player player2 = new Player("a",2,"pos",true);
-    Player player3 = new Player("a",3,"pos",true);
-    Player player4 = new Player("a",4,"pos",true);
-    Player player5 = new Player("a",5,"pos",true);
-    Player player6 = new Player("a",6,"pos",false);
-    SuspendedPlayer player7 = new SuspendedPlayer("a",7,"pos",false, date2);
+    Player player1 = new Player("a",1,"pos",true,true);
+    Player player2 = new Player("a",2,"pos",true,true);
+    Player player3 = new Player("a",3,"pos",true,false);
+    Player player4 = new Player("a",4,"pos",true,false);
+    Player player5 = new Player("a",5,"pos",true,false);
+    Player player6 = new Player("a",6,"pos",false,true);
+    SuspendedPlayer player7 = new SuspendedPlayer("a",7,"pos",false,true,date1);
     ArrayList<Player> players = new ArrayList<Player>();
 
     Team team1 = new Team(players, 6);

@@ -2,9 +2,9 @@ public class SuspendedPlayer extends Player
 {
   private Date timeSuspended;
 
-  public SuspendedPlayer(String name, int number, String position, boolean substitute, Date timeSuspended)
+  public SuspendedPlayer(String name, int number, String position, boolean substitute, boolean suspended,Date timeSuspended)
   {
-    super(name, number, position, substitute);
+    super(name, number, position, substitute,suspended);
     this.timeSuspended = timeSuspended;
   }
 
