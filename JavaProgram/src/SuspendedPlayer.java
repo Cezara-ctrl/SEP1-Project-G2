@@ -1,9 +1,9 @@
-public class SuspendedPlayer extends Player
+public class TeamPlayer extends Player
 {
   private boolean suspended;
   private Date timeSuspended;
 
-  public SuspendedPlayer(String name, String number, String position)
+  public TeamPlayer(String name, String number, String position)
   {
     super(name, number, position);
     suspended = false;
@@ -43,18 +43,18 @@ public class SuspendedPlayer extends Player
     return timeSuspended;
   }
 
-  public SuspendedPlayer copy()
+  public TeamPlayer copy()
   {
-    return new SuspendedPlayer(super.getName(), super.getNumber(), super.getPosition());
+    return new TeamPlayer(super.getName(), super.getNumber(), super.getPosition());
   }
 
   public boolean equals(Object obj)
   {
-    if (!(obj instanceof SuspendedPlayer))
+    if (!(obj instanceof TeamPlayer))
     {
       return false;
     }
-    SuspendedPlayer other = (SuspendedPlayer) obj;
+    TeamPlayer other = (TeamPlayer) obj;
     return super.equals(other) && suspended == other.suspended;
   }
 

@@ -38,6 +38,11 @@ public class Match
     return type;
   }
 
+  public ArrayList<MatchPlayer> getMatchPlayers()
+  {
+    return matchPlayers;
+  }
+
   public boolean hasValidDate()
   {
     boolean valDate = !getDate().isBefore(Date.today());
