@@ -7,7 +7,7 @@ import java.util.Scanner;
 
 public class MyFileHandler
 {
-  public void writeToBinaryFile(String fileName, Object object) throws IOException
+  public static void writeToBinaryFile(String fileName, Object object) throws IOException
   {
     ObjectOutputStream objectOutputStream = null;
 
@@ -34,7 +34,7 @@ public class MyFileHandler
     }
   }
 
-  public Object readFromBinaryFile(String fileName) throws IOException, ClassNotFoundException
+  public static Object readFromBinaryFile(String fileName) throws IOException, ClassNotFoundException
   {
     Object object = null;
     ObjectInputStream objectInputStream = null;
