@@ -1,0 +1,4 @@
+Player: Rodrigo, Number: 1, Position: GK
+Player: Ion, Number: 5, Position: Midfielder
+Player: Oliwia, Number: 10, Position: Forward
+Player: Cezara, Number: 7, Position: Striker
