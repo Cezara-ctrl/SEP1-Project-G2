@@ -101,7 +101,6 @@ public class Player
     {
       return false;
     }
-
   }
 
   public boolean equals(Object o)
@@ -121,5 +120,4 @@ public class Player
         + "." + "IsSuspended" + suspended + "model.Time of suspension in days "
         + suspensionDays;
   }
-
 }
