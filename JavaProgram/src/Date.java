@@ -1,4 +1,5 @@
 import java.time.LocalDate;
+import java.util.GregorianCalendar;
 
 public class Date
 {
@@ -50,27 +51,27 @@ public class Date
 
   public boolean isBefore(Date date2)
   {
-    if(year < date2.year)
+    if (year < date2.year)
     {
       return true;
     }
-    else if(year > date2.year)
+    else if (year > date2.year)
     {
       return false;
     }
     else
     {
-      if(month < date2.month)
+      if (month < date2.month)
       {
         return true;
       }
-      else if(month > date2.month)
+      else if (month > date2.month)
       {
         return false;
       }
       else
       {
-        if(day < date2.day)
+        if (day < date2.day)
         {
           return true;
         }
@@ -84,15 +85,12 @@ public class Date
 
   public static Date today()
   {
-    LocalDate date = LocalDate.now();
-    String datee = date.toString();
-    String dateYear = datee.substring(0, 4);
-    String dateMonth = datee.substring(5, 7);
-    String dateDay = datee.substring(8, 10);
-    int dateY = Integer.parseInt(dateYear);
-    int dateM = Integer.parseInt(dateMonth);
-    int dateD = Integer.parseInt(dateDay);
-    return new Date(dateD, dateM, dateY);
+    GregorianCalendar currentDate = new GregorianCalendar();
+    int currentDay = currentDate.get(GregorianCalendar.DATE);
+    int currentMonth = currentDate.get(GregorianCalendar.MONTH) + 1;
+    int currentYear = currentDate.get(GregorianCalendar.YEAR);
+
+    return new Date(currentDay, currentMonth, currentYear);
   }
 
   public boolean isLeapYear()
@@ -116,21 +114,25 @@ public class Date
 
   public void nextDay()
   {
-    if(month == 12 && day == 31)
+    if (month == 12 && day == 31)
     {
       month = 1;
       day = 1;
       year++;
     }
-    else if(month == 2)
+    else if (month == 2)
     {
-      if((isLeapYear() && day == 29) || (!isLeapYear() && day == 28))
+      if ((isLeapYear() && day == 29) || (!isLeapYear() && day == 28))
       {
         month = 3;
         day = 1;
       }
     }
-    else if(((month == 1 || month == 3 || month == 5 || month == 7 || month == 8 || month == 10) && day == 31) || ((month == 4 || month == 6 || month == 9 || month == 11) && day == 30))
+    else if (
+        ((month == 1 || month == 3 || month == 5 || month == 7 || month == 8
+            || month == 10) && day == 31) || (
+            (month == 4 || month == 6 || month == 9 || month == 11)
+                && day == 30))
     {
       day = 1;
       month++;
@@ -143,7 +145,7 @@ public class Date
 
   private int daysInMonth()
   {
-    LocalDate dateToCountMonthDays = LocalDate.of(year,month,day);
+    LocalDate dateToCountMonthDays = LocalDate.of(year, month, day);
     int daysInMonth = dateToCountMonthDays.lengthOfMonth();
     return daysInMonth;
   }
@@ -159,39 +161,39 @@ public class Date
     Date mDate = dateBefore;
     for (y = yDate.year; y < dateAfter.year; y++)
     {
-      if(yDate.isLeapYear())
+      if (yDate.isLeapYear())
       {
-        daysBetween+=366;
+        daysBetween += 366;
       }
       else
       {
-        daysBetween+=365;
+        daysBetween += 365;
       }
       yDate.year++;
     }
-    if(dateBefore.month < dateAfter.month)
+    if (dateBefore.month < dateAfter.month)
     {
-      for(m = mDate.month; m < dateAfter.month; m++)
+      for (m = mDate.month; m < dateAfter.month; m++)
       {
-        daysBetween+=mDate.daysInMonth();
+        daysBetween += mDate.daysInMonth();
         mDate.month++;
       }
     }
-    else if(dateBefore.month > dateAfter.month)
+    else if (dateBefore.month > dateAfter.month)
     {
-      for(m = mDate.month; m < dateAfter.month; m++)
+      for (m = mDate.month; m < dateAfter.month; m++)
       {
-        daysBetween-=mDate.daysInMonth();
+        daysBetween -= mDate.daysInMonth();
         mDate.month++;
       }
     }
-    if(dateBefore.day < dateAfter.day)
+    if (dateBefore.day < dateAfter.day)
     {
-      daysBetween+=dateAfter.day-dateBefore.day;
+      daysBetween += dateAfter.day - dateBefore.day;
     }
-    else if(dateBefore.day > dateAfter.day)
+    else if (dateBefore.day > dateAfter.day)
     {
-      daysBetween-=dateBefore.day-dateAfter.day;
+      daysBetween -= dateBefore.day - dateAfter.day;
     }
     return daysBetween;
   }
@@ -203,7 +205,7 @@ public class Date
 
   public boolean equals(Object obj)
   {
-    if(!(obj instanceof Date))
+    if (!(obj instanceof Date))
     {
       return false;
     }
@@ -217,13 +219,13 @@ public class Date
   {
     String str = "";
 
-    if(day < 10)
+    if (day < 10)
     {
       str += "0";
     }
     str += day + "/";
 
-    if(month < 10)
+    if (month < 10)
     {
       str += "0";
     }
@@ -233,6 +235,5 @@ public class Date
 
     return str;
   }
-
 
 }

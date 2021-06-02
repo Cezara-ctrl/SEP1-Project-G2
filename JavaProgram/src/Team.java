@@ -3,28 +3,24 @@ import java.util.ArrayList;
 public class Team
 {
   private int numberOfPlayers;
-  private ArrayList<Player> allPlayers;
-  private Player number;
+  private ArrayList<Player> players;
 
-  public Team(int numberOfPlayers, ArrayList<Player> allPlayers)
+
+  public Team(int numberOfPlayers, ArrayList<Player> players)
   {
     this.numberOfPlayers = numberOfPlayers;
-    this.allPlayers = allPlayers;
+    this.players = new ArrayList<>();
   }
 
   public void addPlayer(Player player)
   {
-    allPlayers.add(player);
+    players.add(player);
   }
 
-  public Player getNumber()
-  {
-    return number;
-  }
 
   public void removePlayer(Player player)
   {
-    allPlayers.remove(player);
+    players.remove(player);
   }
 
   public int getNumberOfPlayers()
@@ -34,12 +30,12 @@ public class Team
 
   public ArrayList<Player> getAllPlayers()
   {
-    return allPlayers;
+    return players;
   }
 
   public String toString()
   {
-    return "Number of players: " + numberOfPlayers + ". Players: " + allPlayers;
+    return "Number of players: " + numberOfPlayers + ". Players: " + players;
   }
 
 }

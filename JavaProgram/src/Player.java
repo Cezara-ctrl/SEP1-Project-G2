@@ -1,14 +1,25 @@
-public abstract class Player
+import java.util.Objects;
+
+public class Player
 {
   private String name;
-  private String number;
+  private int number;
   private String position;
+  private boolean suspended;
+  private boolean validPlayerForMatch;
+  private String reason;
+  private int suspensionDays;
 
-  public Player(String name, String number, String position)
+  public Player(String name, int number, String position, boolean suspended,
+      boolean validPlayerForMatch, String reason,int suspensionDays)
   {
     this.name = name;
     this.number = number;
     this.position = position;
+    this.suspended = suspended;
+    this.validPlayerForMatch = validPlayerForMatch;
+    this.reason = reason;
+    this.suspensionDays=suspensionDays;
   }
 
   public void setName(String name)
@@ -16,7 +27,7 @@ public abstract class Player
     this.name = name;
   }
 
-  public void setNumber(String number)
+  public void setNumber(int number)
   {
     this.number = number;
   }
@@ -26,12 +37,36 @@ public abstract class Player
     this.position = position;
   }
 
+  public String setReason()
+  {
+    if (suspended)
+    {
+      if (reason.equals("injured"))
+        return "Injured";
+      else if (reason.equals("Red Card"))
+        return "Red Card";
+    }
+        return "Player is not Suspended";
+    }
+
+  public void setSuspensionDays()
+  {
+    if (suspended)
+    {
+       this.suspensionDays = suspensionDays;
+    }
+  }
+
+  public int getSuspensionDays(){
+    return suspensionDays;
+  }
+
   public String getName()
   {
     return name;
   }
 
-  public String getNumber()
+  public int getNumber()
   {
     return number;
   }
@@ -41,21 +76,48 @@ public abstract class Player
     return position;
   }
 
-  public boolean equals(Object obj)
+  public boolean isSuspended(Player player)
   {
-    if(!(obj instanceof Player))
+    if (player.suspended)
+      return true;
+    else
+      return false;
+  }
+
+  public String getReason()
+  {
+    return reason;
+  }
+
+  public boolean isValidPlayerForMatch()
+  {
+    if (!((reason.equals("Injured")) || (reason
+        .equals("Red Card"))))
+    {
+      return true;
+    }
+    else
     {
       return false;
     }
 
-    Player other = (Player) obj;
+  }
 
-    return name.equals(other.name) && number.equals(other.number) && position.equals(other.position);
+  public boolean equals(Object o)
+  {
+    if (this == o)
+      return true;
+    if (o == null || getClass() != o.getClass())
+      return false;
+    Player player = (Player) o;
+    return number == player.number && suspended == player.suspended && Objects
+        .equals(name, player.name) && Objects.equals(position, player.position);
   }
 
   public String toString()
   {
-    return "Name: " + name + ". Number: " + number + ". Position: " + position + ".";
+    return "Name: " + name + ". Number: " + number + ". Position: " + position
+        + "." + "IsSuspended" + suspended+"Time of suspension in days "+suspensionDays;
   }
 
 }

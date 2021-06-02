@@ -1,3 +1,5 @@
+package aga;
+
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
@@ -10,7 +12,7 @@ public class ViaClubFXML extends Application
   {
     window.setTitle("ViaClub");
     FXMLLoader loader = new FXMLLoader();
-    loader.setLocation(getClass().getResource("ViaClub.fxml"));
+    loader.setLocation(getClass().getResource("aga/ViaClub.fxml"));
     Scene scene = new Scene(loader.load());
     window.setScene(scene);
     window.show();
