@@ -191,7 +191,7 @@
                                  <children>
                                     <Label prefHeight="18.0" prefWidth="67.0" text="Add Match" />
                                     <Region prefHeight="22.0" prefWidth="175.0" />
-                                    <TextField disable="true" text="Date" />
+                                    <TextField disable="true" text="model.Date" />
                                     <ListView prefHeight="42.0" prefWidth="175.0" />
                                     <Region prefHeight="44.0" prefWidth="175.0" />
                                     <Button mnemonicParsing="false" text="Save changes" />
