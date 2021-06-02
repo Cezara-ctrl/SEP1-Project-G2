@@ -1,3 +1,5 @@
+package model;
+
 import com.sun.media.jfxmediaimpl.platform.Platform;
 
 import java.util.ArrayList;
@@ -5,13 +7,15 @@ import java.util.Objects;
 
 public class Match
 {
+
   private String place;
   private String type;
   private ArrayList<Player> players;
   private Date date;
   private Time time;
 
-  public Match(Date date, Time time, String place, String type, ArrayList<Player> players)
+  public Match(Date date, Time time, String place, String type,
+      ArrayList<Player> players)
   {
     this.date = date;
     this.time = time;

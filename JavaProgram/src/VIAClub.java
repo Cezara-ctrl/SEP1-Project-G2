@@ -1,4 +1,7 @@
+package model;
+
 import java.util.ArrayList;
+import java.util.Objects;
 
 public class VIAClub
 {
@@ -16,34 +19,42 @@ public class VIAClub
     allMatches.add(match);
   }
 
-  public void removeMatch(Date date)
+  public ArrayList<Match> removeMatch(Date date)
   {
-    for (Match match : allMatches)
+    ArrayList<Match> matchesWithDate = new ArrayList<>();
+    for (int i = 0; i < allMatches.size(); i++)
     {
-      if (match.getDate().equals(date))
-      {
-        allMatches.remove(match);
-      }
+      if (allMatches.get(i).hasValidDate())
+        matchesWithDate.remove(allMatches.get(i).getDate());
     }
+    return matchesWithDate;
   }
 
   public Match getMatch(Date date)
   {
-    for (Match match : allMatches)
+    Match match = null;
+
+    for (int i = 0; i < allMatches.size(); i++)
     {
-      if (match.getDate().equals(date))
-      {
-        return match;
-      }
+      if (allMatches.get(i).getDate().equals(date))
+        match=allMatches.get(i);
     }
-    return null;
+    return match;
   }
 
-
-
-  public String toString()
+  public boolean equals(Object o)
   {
-    return "All players: "  + ". All matches: " + allMatches;
+    if (this == o)
+      return true;
+    if (o == null || getClass() != o.getClass())
+      return false;
+    VIAClub viaClub = (VIAClub) o;
+    return Objects.equals(team, viaClub.team) && Objects
+        .equals(allMatches, viaClub.allMatches);
   }
 
+  @Override public String toString()
+  {
+    return "VIAClub{" + "team=" + team + ", allMatches=" + allMatches + '}';
+  }
 }

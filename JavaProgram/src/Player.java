@@ -1,3 +1,5 @@
+package model;
+
 import java.util.Objects;
 
 public class Player
@@ -11,7 +13,7 @@ public class Player
   private int suspensionDays;
 
   public Player(String name, int number, String position, boolean suspended,
-      boolean validPlayerForMatch, String reason,int suspensionDays)
+      boolean validPlayerForMatch, String reason, int suspensionDays)
   {
     this.name = name;
     this.number = number;
@@ -19,7 +21,7 @@ public class Player
     this.suspended = suspended;
     this.validPlayerForMatch = validPlayerForMatch;
     this.reason = reason;
-    this.suspensionDays=suspensionDays;
+    this.suspensionDays = suspensionDays;
   }
 
   public void setName(String name)
@@ -37,27 +39,27 @@ public class Player
     this.position = position;
   }
 
-  public String setReason()
+  public void setReason()
   {
     if (suspended)
     {
-      if (reason.equals("injured"))
-        return "Injured";
+      if (reason.equals("Injured"))
+        this.reason = "Injured";
       else if (reason.equals("Red Card"))
-        return "Red Card";
+        this.reason = "Red Card";
     }
-        return "Player is not Suspended";
-    }
+  }
 
   public void setSuspensionDays()
   {
     if (suspended)
     {
-       this.suspensionDays = suspensionDays;
+      this.suspensionDays = suspensionDays;
     }
   }
 
-  public int getSuspensionDays(){
+  public int getSuspensionDays()
+  {
     return suspensionDays;
   }
 
@@ -91,8 +93,7 @@ public class Player
 
   public boolean isValidPlayerForMatch()
   {
-    if (!((reason.equals("Injured")) || (reason
-        .equals("Red Card"))))
+    if (!((reason.equals("Injured")) || (reason.equals("Red Card"))))
     {
       return true;
     }
@@ -117,7 +118,8 @@ public class Player
   public String toString()
   {
     return "Name: " + name + ". Number: " + number + ". Position: " + position
-        + "." + "IsSuspended" + suspended+"Time of suspension in days "+suspensionDays;
+        + "." + "IsSuspended" + suspended + "Time of suspension in days "
+        + suspensionDays;
   }
 
 }
