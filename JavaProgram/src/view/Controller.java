@@ -35,34 +35,33 @@ public class Controller
     manager = new VIAClubModelManager("players.bin", "matches.bin");
   }
 
-  public void handleActions(ActionEvent e)
+  public void savePlayerInformation(ActionEvent e)
   {
     if (e.getSource() == savePlayerButton)
     {
       String name = nameField.getText();
       String number = numberField.getText();
-      String suspention = suspensionField.getText();
       String position = positionBox.getSelectionModel().getSelectedItem();
+      String suspention = suspensionField.getText();
 
-      manager.savePlayers("players.bin", allPlayersArea);
-    }
-    else if(e.getSource() == positionBox)
-    {
-      positionBox.getItems().addAll("GK", "Midfielder", "Forward", "Striker");
+      manager.savePlayers("players.bin", playersPane);
     }
   }
 
+  public void removePlayerInformation(ActionEvent e)
+  {
+    if (e.getSource() == removePlayerButton)
+    {
+      nameField.clear();
+      numberField.clear();
+      positionBox.getItems().clear();
+      suspensionField.clear();
+    }
+  }
 
-
-
-
-
-
-
-
-
-
-
-
+  public TextField getNameField()
+  {
+    return nameField;
+  }
 
 }
