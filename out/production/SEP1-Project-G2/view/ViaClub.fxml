@@ -53,7 +53,7 @@
 <?import javafx.scene.layout.Region?>
 <?import javafx.scene.layout.VBox?>
 
-<VBox xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1">
+<VBox xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.Controller">
   <children>
     <MenuBar VBox.vgrow="NEVER">
       <menus>
@@ -81,7 +81,7 @@
             <content>
               <AnchorPane fx:id="playersPane">
                      <children>
-                        <Pane prefHeight="232.0" prefWidth="622.0">
+                        <Pane prefHeight="380.0" prefWidth="622.0">
                            <children>
                               <VBox layoutX="1.0" layoutY="12.0" prefHeight="235.0" prefWidth="204.0" spacing="8.0">
                                  <children>
@@ -105,7 +105,7 @@
                                  </padding>
                               </VBox>
                               <Button fx:id="removePlayerButton" layoutX="277.0" layoutY="14.0" mnemonicParsing="false" onAction="#removePlayerInformation" onMouseClicked="#removePlayer" prefHeight="25.0" prefWidth="99.0" text="Remove Player" />
-                              <Button fx:id="saveChangesButton" layoutX="457.0" layoutY="105.0" mnemonicParsing="false" onMouseClicked="#saveChanges" text="Save Changes" />
+                              <Button fx:id="saveChangesButton" layoutX="457.0" layoutY="105.0" mnemonicParsing="false" onAction="#setAllMatchesTextArea" onMouseClicked="#saveChanges" text="Save Changes" />
                               <ComboBox fx:id="removePlayerBox" layoutX="396.0" layoutY="14.0" onAction="#handleActions" prefWidth="150.0" />
                            </children>
                            <padding>
@@ -134,16 +134,16 @@
                   </AnchorPane>
             </content>
           </Tab>
-          <Tab fx:id="matchesTab" text="Matches">
+          <Tab id="matchesTab" fx:id="matchesTab" text="Matches">
             <content>
               <AnchorPane fx:id="matchesPane" minHeight="0.0" minWidth="0.0" prefHeight="371.0" prefWidth="621.0">
                      <children>
-                        <Pane layoutX="5.0" layoutY="-4.0" prefHeight="389.0" prefWidth="614.0">
+                        <Pane layoutY="-4.0" prefHeight="390.0" prefWidth="626.0">
                            <children>
                               <HBox layoutX="371.0" layoutY="26.0" />
-                              <HBox layoutX="298.0" layoutY="208.0" prefHeight="107.0" prefWidth="315.0">
+                              <HBox layoutX="1.0" layoutY="247.0" prefHeight="107.0" prefWidth="626.0">
                                  <children>
-                                    <TextArea prefHeight="107.0" prefWidth="317.0" />
+                                    <TextArea id="allMatchesTextArea" prefHeight="107.0" prefWidth="616.0" />
                                     <ScrollBar orientation="VERTICAL" />
                                  </children>
                               </HBox>
@@ -151,7 +151,7 @@
                                  <children>
                                     <Label prefHeight="37.0" prefWidth="69.0" text="Lorema" />
                                     <Region prefHeight="42.0" prefWidth="106.0" HBox.hgrow="ALWAYS" />
-                                    <Label prefHeight="43.0" prefWidth="116.0" text="Ih sta siba lorema" />
+                                    <Label prefHeight="26.0" prefWidth="95.0" text="Skype" />
                                     <Region prefHeight="30.0" prefWidth="90.0" HBox.hgrow="ALWAYS" />
                                     <Label prefHeight="36.0" prefWidth="66.0" text="Discord" />
                                     <Region prefHeight="42.0" prefWidth="102.0" HBox.hgrow="ALWAYS" />
@@ -159,31 +159,26 @@
                                     <Region prefHeight="38.0" prefWidth="97.0" />
                                  </children>
                               </HBox>
-                              <HBox layoutX="2.0" layoutY="208.0" prefHeight="106.0" prefWidth="282.0">
-                                 <children>
-                                    <TextArea prefHeight="152.0" prefWidth="270.0" />
-                                    <ScrollBar orientation="VERTICAL" prefHeight="152.0" prefWidth="0.0" />
-                                 </children>
-                              </HBox>
-                              <Label layoutX="14.0" layoutY="186.0" prefHeight="18.0" prefWidth="109.0" text="UpcomingMatches" />
-                              <VBox layoutX="1.0" layoutY="15.0" prefHeight="133.0" prefWidth="175.0">
+                              <VBox layoutX="1.0" layoutY="15.0" prefHeight="183.0" prefWidth="175.0">
                                  <children>
                                     <Label prefHeight="18.0" prefWidth="67.0" text="Add Match" />
-                                    <Region prefHeight="22.0" prefWidth="175.0" />
-                                    <TextField disable="true" text="model.Date" />
-                                    <ListView prefHeight="42.0" prefWidth="175.0" />
-                                    <Region prefHeight="44.0" prefWidth="175.0" />
-                                    <Button mnemonicParsing="false" text="Save changes" />
+                                    <TextField id="placeButton" disable="true" text="Place" />
+                                    <TextField id="typeButton" disable="true" text="Type" />
+                                    <TextField disable="true" text="Date" />
+                                    <TextField id="timeButton" disable="true" text="Time" />
+                                    <ListView id="listViewForPlayers" editable="true" prefHeight="31.0" prefWidth="175.0" />
+                                    <Button id="savechangesForMatches" mnemonicParsing="false" text="Save changes" />
                                  </children>
                               </VBox>
                               <HBox layoutX="321.0" layoutY="12.0" prefHeight="35.0" prefWidth="293.0">
                                  <children>
                                     <Button mnemonicParsing="false" prefHeight="26.0" prefWidth="104.0" text="Remove Match" />
-                                    <Region prefHeight="88.0" prefWidth="62.0" HBox.hgrow="ALWAYS" />
+                                    <Region prefHeight="35.0" prefWidth="45.0" HBox.hgrow="ALWAYS" />
                                     <ChoiceBox prefWidth="150.0" />
                                  </children>
                               </HBox>
-                              <Label layoutX="313.0" layoutY="186.0" prefHeight="18.0" prefWidth="74.0" text="AllMatches" />
+                              <Label layoutX="226.0" layoutY="219.0" prefHeight="18.0" prefWidth="74.0" text="AllMatches" />
+                              <Button fx:id="update" layoutX="500.0" layoutY="183.0" mnemonicParsing="false" onAction="#setAllMatchesTextArea" text="UpdateMatches" />
                            </children>
                         </Pane>
                      </children>

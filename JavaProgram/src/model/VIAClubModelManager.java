@@ -11,12 +11,11 @@ public class VIAClubModelManager
   private String playersFileName;
   private String matchesFileName;
 
-  public VIAClubModelManager(String playersFileName, String matchesFileName)
+  public VIAClubModelManager(String playersFileName,String matchesFileName)
   {
     this.playersFileName = playersFileName;
     this.matchesFileName = matchesFileName;
   }
-
 
   public ArrayList<Player> getAllPlayers()
   {
