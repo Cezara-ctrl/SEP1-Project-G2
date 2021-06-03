@@ -46,19 +46,12 @@ public class Controller
 
       manager.savePlayers("players.bin", allPlayersArea);
     }
-    else if (e.getSource() == positionBox)
+    else if(e.getSource() == positionBox)
     {
-      String temp = positionBox.getSelectionModel().getSelectedItem();
-
-      if (temp != null)
-      {
-        positionBox.setAccessibleText("GK");
-        positionBox.setAccessibleText("Midfielder");
-        positionBox.setAccessibleText("Forward");
-        positionBox.setAccessibleText("Striker");
-      }
+      positionBox.getItems().addAll("GK", "Midfielder", "Forward", "Striker");
     }
   }
+
 
 
 
