@@ -5,7 +5,7 @@ import java.util.ArrayList;
 import java.util.Objects;
 
 /**
- * A class containing a list of Student objects.
+ * A class managing matches (creating, editing and deleting).
  * @author Oliwia Jankowska
  * @version 1.0
 */
@@ -18,7 +18,7 @@ public class Match
   private Time time;
 
   /**
-   * Constructor initializing the StudentList.
+   * Constructor initializing the Match.
    * @param date the date of the match
    * @param time the time of the match
    * @param place the place the match will be located at
