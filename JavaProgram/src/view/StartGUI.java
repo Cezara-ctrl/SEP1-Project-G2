@@ -17,4 +17,5 @@ public class StartGUI extends Application
     window.setScene(scene);
     window.show();
   }
+
 }

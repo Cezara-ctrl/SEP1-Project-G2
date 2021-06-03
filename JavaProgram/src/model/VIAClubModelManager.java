@@ -17,6 +17,7 @@ public class VIAClubModelManager
     this.matchesFileName = matchesFileName;
   }
 
+
   public ArrayList<Player> getAllPlayers()
   {
     ArrayList<Player> allPlayers = new ArrayList<Player>();

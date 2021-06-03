@@ -70,6 +70,7 @@ public class Team
     return null;
   }
 
+
   public int getIndex(String name, int number, String position)
   {
     for(int i = 0; i<players.size(); i++)

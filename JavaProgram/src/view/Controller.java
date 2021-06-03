@@ -1,11 +1,12 @@
 package view;
 
+import javafx.application.Application;
+import javafx.event.ActionEvent;
+import javafx.event.Event;
 import javafx.scene.control.*;
 import javafx.scene.layout.Pane;
 import model.Player;
 import model.VIAClubModelManager;
-
-import java.util.ArrayList;
 
 public class Controller
 {
@@ -32,52 +33,31 @@ public class Controller
   public void initialize()
   {
     manager = new VIAClubModelManager("players.bin", "matches.bin");
-    loadPlayersPane();
-    loadMatchesPane();
   }
 
-  public void loadPlayersPane()
+  public void savePlayerInformation(ActionEvent e)
   {
-    playersPane.setVisible(true);
-    matchesPane.setVisible(false);
-    playersTab.setStyle("-fx-background-color: #000037;-fx-font-size: 24px;fx-font-weight: bold;");
-    matchesTab.setStyle("-fx-background-color: #12123A;-fx-font-size: 24px;fx-font-weight: bold;");
-  }
-
-  public void loadMatchesPane()
-  {
-    playersPane.setVisible(false);
-    matchesPane.setVisible(true);
-    playersTab.setStyle("-fx-background-color: #12123A;-fx-font-size: 24px;fx-font-weight: bold;");
-    matchesTab.setStyle("-fx-background-color: #000037;-fx-font-size: 24px;fx-font-weight: bold;");
-  }
-
-  public void addPlayer()
-  {
-    if(manager.getPlayer(numberField.getText()) == null)
+    if (e.getSource() == savePlayerButton)
     {
-      Player newPlayer = new Player(nameField.getText(),numberField.getText(),positionBox.getSelectionModel().getSelectedItem(),suspensionField.getText());
+      String name = nameField.getText();
+      String number = numberField.getText();
+      String position = positionBox.getSelectionModel().getSelectedItem();
+      String suspention = suspensionField.getText();
+
+      manager.savePlayers("players.bin", playersPane);
+    }
+  }
+
+  public void removePlayerInformation(ActionEvent e)
+  {
+    if (e.getSource() == removePlayerButton)
+    {
       nameField.clear();
       numberField.clear();
+      positionBox.getItems().clear();
       suspensionField.clear();
-
-      manager.savePlayers("players.bin", newPlayer);
-      messageInformation("Member Added");
-    }
-    else
-    {
-      messageWarning("A players with this number already exists");
     }
   }
-
-
-
-
-
-
-
-
-
 
 
 

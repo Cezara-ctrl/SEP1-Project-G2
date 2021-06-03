@@ -80,6 +80,7 @@ public class Match
     return players;
   }
 
+
   /**
    * Adds only valid players to the list of layers (the player parameter).
    * @param allPlayersList the list of all players assigned to the match (not validated yet)

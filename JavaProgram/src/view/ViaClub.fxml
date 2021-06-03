@@ -98,13 +98,13 @@
                                     <TextField fx:id="suspensionField" disable="true" text="Suspention time" />
                                     <Label disable="true" text="Position" />
                                     <ComboBox fx:id="positionBox" onAction="#handleActions" prefHeight="25.0" prefWidth="203.0" />
-                                    <Button fx:id="savePlayerButton" mnemonicParsing="false" onMouseClicked="#savePlayer" prefHeight="26.0" prefWidth="54.0" text="Save" />
+                                    <Button fx:id="savePlayerButton" mnemonicParsing="false" onAction="#savePlayerInformation" onMouseClicked="#savePlayer" prefHeight="26.0" prefWidth="54.0" text="Save" />
                                  </children>
                                  <padding>
                                     <Insets bottom="8.0" left="8.0" right="8.0" top="8.0" />
                                  </padding>
                               </VBox>
-                              <Button fx:id="removePlayerButton" layoutX="277.0" layoutY="14.0" mnemonicParsing="false" onMouseClicked="#removePlayer" prefHeight="25.0" prefWidth="99.0" text="Remove Player" />
+                              <Button fx:id="removePlayerButton" layoutX="277.0" layoutY="14.0" mnemonicParsing="false" onAction="#removePlayerInformation" onMouseClicked="#removePlayer" prefHeight="25.0" prefWidth="99.0" text="Remove Player" />
                               <Button fx:id="saveChangesButton" layoutX="457.0" layoutY="105.0" mnemonicParsing="false" onMouseClicked="#saveChanges" text="Save Changes" />
                               <ComboBox fx:id="removePlayerBox" layoutX="396.0" layoutY="14.0" onAction="#handleActions" prefWidth="150.0" />
                            </children>
