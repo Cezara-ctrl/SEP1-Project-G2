@@ -9,7 +9,7 @@
 }
 
 body {
-  font-family: montserrat;
+  font-family: montserrat, Arial, sans-serif;
 }
 
 #myCarousel {
@@ -45,6 +45,14 @@ nav ul li {
   transition: .5s;
 }
 
+.col-md-6 img {
+  max-width: 100%;
+}
+
+.col-md-6:hover {
+  background-color: rgb(172, 172, 172);
+}
+
 .card img {
   min-height: 300px;
   width: auto;
@@ -53,7 +61,7 @@ nav ul li {
 html,body {
   height: 100%;
   width: 100%;
-  font-family: 'Poppins', sans-serif;
+  font-family: 'Poppins', Arial, sans-serif;
   color: #222; 
 }
 
@@ -95,7 +103,7 @@ hr.light-100 {
 }
 
 .text {
-    font-family: sans-serif ;
+    font-family: Arial, sans-serif;
     color: #545454;
     line-height: 30px;
     text-align: justify;
@@ -143,6 +151,7 @@ hr.light-100 {
 }
 
 /* NOTIFICATION BAR */
+/* removed and underdeveloped due to the time restraint */
 
 .notify-success {
   position:relative;
