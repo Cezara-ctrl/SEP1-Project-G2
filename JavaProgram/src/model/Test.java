@@ -20,7 +20,7 @@ public class Test
     ArrayList<Player> players = new ArrayList<Player>();
     players.add(player6);
     players.add(player7);
-
+    player6.getReason();
     Team team1 = new Team(3,players);
     team1.addPlayer(player5);
 
@@ -32,7 +32,6 @@ public class Test
     VIAClub test1 = new VIAClub(team1);
 
     test1.addMatch(match1);
-
 
     System.out.println(test1.getMatch(date1));
   }
