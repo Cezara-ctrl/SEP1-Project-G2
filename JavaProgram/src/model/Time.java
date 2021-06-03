@@ -13,6 +13,7 @@ public class Time
     this.second = second;
   }
 
+
   public void setHour(int hour)
   {
     this.hour = hour;

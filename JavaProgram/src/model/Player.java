@@ -86,6 +86,7 @@ public class Player
       return false;
   }
 
+
   public String getReason()
   {
     return reason;

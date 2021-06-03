@@ -34,6 +34,7 @@ public class MyFileHandler
     }
   }
 
+
   public static Object readFromBinaryFile(String fileName) throws IOException, ClassNotFoundException
   {
     Object object = null;

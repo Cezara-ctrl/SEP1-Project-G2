@@ -14,6 +14,7 @@ public class VIAClub
     allMatches = new ArrayList<Match>();
   }
 
+
   public void addMatch(Match match)
   {
     allMatches.add(match);
