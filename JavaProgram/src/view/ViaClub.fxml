@@ -53,7 +53,7 @@
 <?import javafx.scene.layout.Region?>
 <?import javafx.scene.layout.VBox?>
 
-<VBox xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1">
+<VBox xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.Controller">
   <children>
     <MenuBar VBox.vgrow="NEVER">
       <menus>
@@ -83,10 +83,10 @@
                      <children>
                         <Pane prefHeight="232.0" prefWidth="622.0">
                            <children>
-                              <VBox layoutX="1.0" layoutY="12.0" prefHeight="235.0" prefWidth="204.0" spacing="8.0">
+                              <VBox layoutX="1.0" layoutY="12.0" prefHeight="242.0" prefWidth="204.0" spacing="8.0">
                                  <children>
                                     <Label prefHeight="18.0" prefWidth="76.0" text="Add Player" />
-                                    <TextField fx:id="nameField" disable="true" prefHeight="26.0" prefWidth="220.0" text="Name">
+                                    <TextField fx:id="nameField" disable="true" prefHeight="12.0" prefWidth="188.0" promptText="Name">
                                        <opaqueInsets>
                                           <Insets />
                                        </opaqueInsets>
@@ -94,18 +94,18 @@
                                           <Insets bottom="8.0" left="8.0" right="8.0" top="8.0" />
                                        </padding>
                                     </TextField>
-                                    <TextField fx:id="numberField" disable="true" text="Number" />
-                                    <TextField fx:id="suspensionField" disable="true" text="Suspention time" />
+                                    <TextField fx:id="numberField" disable="true" promptText="Number" />
+                                    <TextField fx:id="suspensionField" disable="true" promptText="Suspention time" />
                                     <Label disable="true" text="Position" />
-                                    <ComboBox fx:id="positionBox" onAction="#handleActions" prefHeight="25.0" prefWidth="203.0" />
-                                    <Button fx:id="savePlayerButton" mnemonicParsing="false" onMouseClicked="#savePlayer" prefHeight="26.0" prefWidth="54.0" text="Save" />
+                                    <ComboBox fx:id="positionBox" onAction="#setPosition" prefHeight="25.0" prefWidth="203.0" />
+                                    <Button fx:id="savePlayerButton" mnemonicParsing="false" onAction="#savePlayerInformation" onMouseClicked="#savePlayer" prefHeight="26.0" prefWidth="54.0" text="Save" />
                                  </children>
                                  <padding>
                                     <Insets bottom="8.0" left="8.0" right="8.0" top="8.0" />
                                  </padding>
                               </VBox>
-                              <Button fx:id="removePlayerButton" layoutX="277.0" layoutY="14.0" mnemonicParsing="false" onMouseClicked="#removePlayer" prefHeight="25.0" prefWidth="99.0" text="Remove Player" />
-                              <Button fx:id="saveChangesButton" layoutX="457.0" layoutY="105.0" mnemonicParsing="false" onMouseClicked="#saveChanges" text="Save Changes" />
+                              <Button fx:id="removePlayerButton" layoutX="277.0" layoutY="14.0" mnemonicParsing="false" onAction="#removePlayerInformation" onMouseClicked="#removePlayer" prefHeight="25.0" prefWidth="99.0" text="Remove Player" />
+                              <Button fx:id="saveChangesButton" layoutX="457.0" layoutY="105.0" mnemonicParsing="false" onAction="#handleActions" onMouseClicked="#saveChanges" text="Save Changes" />
                               <ComboBox fx:id="removePlayerBox" layoutX="396.0" layoutY="14.0" onAction="#handleActions" prefWidth="150.0" />
                            </children>
                            <padding>

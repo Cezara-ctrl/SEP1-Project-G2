@@ -59,12 +59,11 @@ public class Controller
     }
   }
 
-  public void setNameField(ActionEvent e)
-  {
-    TextInputDialog nameField = new TextInputDialog();
 
-    nameField.getDialogPane().setContentText("Name");
-  }
+
+
+
+
 
 
 
