@@ -1,6 +1,5 @@
 package model;
 
-import com.sun.media.jfxmediaimpl.platform.Platform;
 import java.util.ArrayList;
 import java.util.Objects;
 
