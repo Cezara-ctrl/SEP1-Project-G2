@@ -3,13 +3,24 @@ package model;
 import java.time.LocalDate;
 import java.util.GregorianCalendar;
 
+/**
+ * A class containing a constructor for date and also the methods for using this data.
+ * @author Rodrigo Valente
+ * @version 1.0
+ */
 public class Date
 {
   private int day;
   private int month;
   private int year;
 
-
+  /**
+   * Constructor initializing the Date.
+   *
+   * @param day the hour of the date
+   * @param month the minute of the date
+   * @param year the second of the date
+   */
   public Date(int day, int month, int year)
   {
     this.day = day;
@@ -17,41 +28,82 @@ public class Date
     this.year = year;
   }
 
+  /**
+   * Sets the day parameter of the date.
+   *
+   * @param day the day of the date that we want to set
+   */
   public void setDay(int day)
   {
     this.day = day;
   }
 
+  /**
+   * Sets the month parameter of the date.
+   *
+   * @param month the month of the date that we want to set
+   */
   public void setMonth(int month)
   {
     this.month = month;
   }
 
+  /**
+   * Sets the year parameter of the date.
+   *
+   * @param year the year of the date that we want to set
+   */
   public void setYear(int year)
   {
     this.year = year;
   }
 
+  /**
+   * Gets the day parameter of the date.
+   *
+   * @return the day of the date
+   */
   public int getDay()
   {
     return day;
   }
 
+  /**
+   * Gets the month parameter of the date.
+   *
+   * @return the month of the date
+   */
   public int getMonth()
   {
     return month;
   }
 
+  /**
+   * Gets the year parameter of the date.
+   *
+   * @return the year of the date
+   */
   public int getYear()
   {
     return year;
   }
 
+  /**
+   * Gets a string representation of the date
+   *
+   * @return a string representation of the date
+   */
   public String getDate()
   {
     return day + "/" + month + "/" + year;
   }
 
+  /**
+   * Check if the current Date object is before another Date object
+   *
+   * @param date2 the Date object to compare against
+   * @return true if the current Date object is before the other Date object, false otherwise
+   */
   public boolean isBefore(Date date2)
   {
     if (year < date2.year)
@@ -86,6 +138,11 @@ public class Date
     }
   }
 
+  /**
+   * Gets the today date.
+   *
+   * @return today's date
+   */
   public static Date today()
   {
     GregorianCalendar currentDate = new GregorianCalendar();
@@ -96,6 +153,11 @@ public class Date
     return new Date(currentDay, currentMonth, currentYear);
   }
 
+  /**
+   * Checks if a year is a leap year.
+   *
+   * @return true if the year is a leap year, false otherwise
+   */
   public boolean isLeapYear()
   {
     if (this.year % 4 == 0)
@@ -115,6 +177,11 @@ public class Date
     }
   }
 
+  /**
+   * Gets the day of tomorrow
+   *
+   * @return a day after today
+   */
   public void nextDay()
   {
     if (month == 12 && day == 31)
@@ -146,6 +213,11 @@ public class Date
     }
   }
 
+  /**
+   * Gets the days in a month.
+   *
+   * @return the days in a month
+   */
   private int daysInMonth()
   {
     LocalDate dateToCountMonthDays = LocalDate.of(year, month, day);
@@ -153,6 +225,12 @@ public class Date
     return daysInMonth;
   }
 
+  /**
+   * Gets the days in a month.
+   *
+   * @param date the date that we want to know how many days until this date
+   * @return the days between two dates
+   */
   public int timeUntil(Date date)
   {
     Date dateBefore = copy();
@@ -201,11 +279,22 @@ public class Date
     return daysBetween;
   }
 
+  /**
+   * A method that copies the date.
+   *
+   * @return new date with a new day, month and year
+   */
   public Date copy()
   {
     return new Date(day, month, year);
   }
 
+  /**
+   * Checks if the day, month and year of an object is equal to another.
+   *
+   * @param obj the object to compare with
+   * @return true if they are equal, otherwise it returns false
+   */
   public boolean equals(Object obj)
   {
     if (!(obj instanceof Date))
@@ -218,6 +307,11 @@ public class Date
     return day == other.day && month == other.month && year == other.year;
   }
 
+  /**
+   * Returns the Date as a String.
+   *
+   * @return all the parameters of the date in the format: "day/month/year"
+   */
   public String toString()
   {
     String str = "";
