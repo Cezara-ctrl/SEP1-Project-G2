@@ -94,14 +94,10 @@ public class Player
 
   public boolean isValidPlayerForMatch()
   {
-    if (!((reason.equals("Injured")) || (reason.equals("Red Card"))))
-    {
+    if (!((reason.equals("Injured")) || (reason.equals("Red Card")))){
       return true;
     }
-    else
-    {
-      return false;
-    }
+    return isValidPlayerForMatch();
   }
 
 
