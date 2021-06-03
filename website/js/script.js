@@ -1,4 +1,5 @@
 //NOTIFICATION BAR
+//this function was removed and not developed further due to the lack of time
 
 function notifyMe() {
     if (!window.Notification) {

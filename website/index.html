@@ -15,7 +15,7 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
   </head>
-  <body onload="notifyMe()">
+  <body>
 
     <!-- NAVIGATION BAR -->
     <div class="jumbotron mb-0">
@@ -76,12 +76,36 @@
       </div>
     </div>
 
-    <!-- NOTIFICATION BAR -->
-
-    <button onclick="notifyMe()">Notify Me</button>
+    <!-- SOME NEWS -->
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6">
+          <h3>Covid restrictions affecting public during matches.</h3>
+          <p>Showing support to your team more important than ever when you can't physically come to see the matches.</p>
+          <img id="covidImg" src="images/covid.jpg" alt="Carboard cutouts on the stadium seats" title="Stadium publics during covid">
+        </div>
+        <div class="col-md-6">
+          <h3>Appreciate fellow players from femme teams.</h3>
+          <p>Diversity win!</p>
+          <img id="femmeImg" src="images/femme.jpg" alt="Two female soccer players about to have a celebratory hug" title="Appreciation for women in sports">
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-6">
+          <h3>Art contest guidelines and results.</h3>
+          <p>Many wonderful submissions, trouble to pick winners! But there are few chosen ones to be announced.</p>
+          <img id="artImg" src="images/art.jpg" alt="An artwork of a football with fire effect" title="Art contest">
+        </div>
+        <div class="col-md-6">
+          <h3>Photography contest guidelines and results.</h3>
+          <p>Amazing photos taken even with covid restrictions (don't mind the masks).</p>
+          <img id="photoImg" src="images/photo.jpeg" alt="Artistic photo of kicking the ball in the air" title="Photography contest">
+        </div>
+      </div>
+    </div>
 
     <!-- FOOTER -->
-    <footer class="bg-dark text-center text-white">
+    <footer class="bg-dark text-center text-white mt-4">
       <div class="container p-4">
         <section class="mb-4">
           <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"><i class="fab fa-facebook-f"></i></a>
