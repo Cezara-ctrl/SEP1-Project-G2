@@ -53,6 +53,9 @@ public class MyFileHandler
       {
         System.out.print("Done reading");
       }
+      catch (IIOException e){
+        System.out.println("IIOE exception");
+      }
     }
     finally
     {
@@ -117,23 +120,23 @@ public class MyFileHandler
     return read.nextLine();
   }
 
-  public void writeArrayToTextFile(String fileName, String[] strs) throws FileNotFoundException
+  public void writeArrayToTextFile(String fileName, String[] string) throws FileNotFoundException
   {
     FileOutputStream fileOut = new FileOutputStream(fileName);
     PrintWriter write = new PrintWriter(fileOut);
-    for (String string : strs)
+    for (String string1 : string)
     {
-      write.println(string);
+      write.println(string1);
     }
     write.close();
     System.out.println("Done writing to file.");
   }
 
-  public void appendArrayToTextFile(String fileName, String[] strs) throws FileNotFoundException
+  public void appendArrayToTextFile(String fileName, String[] strings) throws FileNotFoundException
   {
     FileOutputStream fileOut = new FileOutputStream(fileName, true);
     PrintWriter write = new PrintWriter(fileOut);
-    for (String string : strs)
+    for (String string : strings)
     {
       write.println(string);
     }
@@ -141,19 +144,30 @@ public class MyFileHandler
     System.out.println("Done appending to file.");
   }
 
-  public String[] readArrayFromTextFile(String fileName) throws FileNotFoundException
+  public static String[] readArrayFromTextFile(String fileName) throws FileNotFoundException
   {
-    FileInputStream fileIn = new FileInputStream(fileName);
-    Scanner read = new Scanner(fileIn);
-    ArrayList<String> strs = new ArrayList<String>();
-    while (read.hasNext())
+    Scanner readFromFile = null;
+    ArrayList<String> string = new ArrayList<String>();
+
+    try
     {
-      strs.add(read.nextLine());
+      FileInputStream fileInStream = new FileInputStream(fileName);
+      readFromFile = new Scanner(fileInStream);
+
+      while (readFromFile.hasNext())
+      {
+        string.add(readFromFile.nextLine());
+      }
     }
-    read.close();
-    String[] strsArray = new String[strs.size()];
-    strsArray = strs.toArray(strsArray);
-    System.out.println("Done reading to file.");
-    return strsArray;
+    finally
+    {
+      if (readFromFile != null)
+      {
+        readFromFile.close();
+      }
+    }
+
+    String[] stringArray = new String[string.size()];
+    return string.toArray(stringArray);
   }
 }

@@ -1,6 +1,6 @@
 package model;
 
-import utils.MyFileHandler;
+import utils.*;
 
 import java.io.FileNotFoundException;
 import java.io.IOException;
