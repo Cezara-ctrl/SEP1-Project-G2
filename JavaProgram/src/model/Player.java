@@ -103,6 +103,7 @@ public class Player
     }
   }
 
+
   public boolean equals(Object o)
   {
     if (this == o)
