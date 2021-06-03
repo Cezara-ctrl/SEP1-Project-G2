@@ -34,6 +34,7 @@
 
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckMenuItem?>
 <?import javafx.scene.control.ChoiceBox?>
 <?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.Label?>
@@ -42,7 +43,6 @@
 <?import javafx.scene.control.MenuBar?>
 <?import javafx.scene.control.MenuItem?>
 <?import javafx.scene.control.ScrollBar?>
-<?import javafx.scene.control.SeparatorMenuItem?>
 <?import javafx.scene.control.Tab?>
 <?import javafx.scene.control.TabPane?>
 <?import javafx.scene.control.TextArea?>
@@ -53,54 +53,33 @@
 <?import javafx.scene.layout.Region?>
 <?import javafx.scene.layout.VBox?>
 
-
-
 <VBox xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1">
   <children>
     <MenuBar VBox.vgrow="NEVER">
       <menus>
         <Menu mnemonicParsing="false" text="File">
           <items>
-            <MenuItem mnemonicParsing="false" text="New" />
-            <MenuItem mnemonicParsing="false" text="Open…" />
-            <Menu mnemonicParsing="false" text="Open Recent" />
-            <SeparatorMenuItem mnemonicParsing="false" />
-            <MenuItem mnemonicParsing="false" text="Close" />
-            <MenuItem mnemonicParsing="false" text="Save" />
-            <MenuItem mnemonicParsing="false" text="Save As…" />
-            <MenuItem mnemonicParsing="false" text="Revert" />
-            <SeparatorMenuItem mnemonicParsing="false" />
-            <MenuItem mnemonicParsing="false" text="Preferences…" />
-            <SeparatorMenuItem mnemonicParsing="false" />
-            <MenuItem mnemonicParsing="false" text="Quit" />
+            <MenuItem fx:id="exitMenuButton" mnemonicParsing="false" text="Exit" />
           </items>
         </Menu>
         <Menu mnemonicParsing="false" text="Edit">
-          <items>
-            <MenuItem mnemonicParsing="false" text="Undo" />
-            <MenuItem mnemonicParsing="false" text="Redo" />
-            <SeparatorMenuItem mnemonicParsing="false" />
-            <MenuItem mnemonicParsing="false" text="Cut" />
-            <MenuItem mnemonicParsing="false" text="Copy" />
-            <MenuItem mnemonicParsing="false" text="Paste" />
-            <MenuItem mnemonicParsing="false" text="Delete" />
-            <SeparatorMenuItem mnemonicParsing="false" />
-            <MenuItem mnemonicParsing="false" text="Select All" />
-            <MenuItem mnemonicParsing="false" text="Unselect All" />
-          </items>
+               <items>
+                  <CheckMenuItem fx:id="editPlayersMenuButton" mnemonicParsing="false" text="Edit players" />
+                  <CheckMenuItem fx:id="editMatchesMenuButton" mnemonicParsing="false" text="Edit matches" />
+               </items>
         </Menu>
-        <Menu mnemonicParsing="false" text="Help">
+        <Menu mnemonicParsing="false" text="About">
           <items>
-            <MenuItem mnemonicParsing="false" text="About MyHelloApp" />
+            <MenuItem fx:id="aboutMenuButton" mnemonicParsing="false" text="About" />
           </items>
         </Menu>
       </menus>
     </MenuBar>
       <TabPane tabClosingPolicy="UNAVAILABLE">
         <tabs>
-          <Tab text="Players">
+          <Tab fx:id="playersTab" text="Players">
             <content>
-              <AnchorPane>
+              <AnchorPane fx:id="playersPane">
                      <children>
                         <Pane prefHeight="232.0" prefWidth="622.0">
                            <children>
@@ -155,9 +134,9 @@
                   </AnchorPane>
             </content>
           </Tab>
-          <Tab text="Matches">
+          <Tab fx:id="matchesTab" text="Matches">
             <content>
-              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="371.0" prefWidth="621.0">
+              <AnchorPane fx:id="matchesPane" minHeight="0.0" minWidth="0.0" prefHeight="371.0" prefWidth="621.0">
                      <children>
                         <Pane layoutX="5.0" layoutY="-4.0" prefHeight="389.0" prefWidth="614.0">
                            <children>
