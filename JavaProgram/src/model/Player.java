@@ -10,10 +10,10 @@ public class Player
   private boolean suspended;
   private boolean validPlayerForMatch;
   private String reason;
-  private String suspensionDays;
+  private int suspensionDays;
 
   public Player(String name, int number, String position, boolean suspended,
-      boolean validPlayerForMatch, String reason, String suspensionDays)
+      boolean validPlayerForMatch, String reason, int suspensionDays)
   {
     this.name = name;
     this.number = number;
@@ -21,14 +21,6 @@ public class Player
     this.suspended = suspended;
     this.validPlayerForMatch = validPlayerForMatch;
     this.reason = reason;
-    this.suspensionDays = suspensionDays;
-  }
-
-  public Player(String name, int number, String position, String suspensionDays)
-  {
-    this.name = name;
-    this.number = number;
-    this.position = position;
     this.suspensionDays = suspensionDays;
   }
 
@@ -66,7 +58,7 @@ public class Player
     }
   }
 
-  public String getSuspensionDays()
+  public int getSuspensionDays()
   {
     return suspensionDays;
   }
