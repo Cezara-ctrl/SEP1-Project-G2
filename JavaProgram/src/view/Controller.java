@@ -1,11 +1,12 @@
 package view;
 
+import javafx.application.Application;
+import javafx.event.ActionEvent;
+import javafx.event.Event;
 import javafx.scene.control.*;
 import javafx.scene.layout.Pane;
 import model.Player;
 import model.VIAClubModelManager;
-
-import java.util.ArrayList;
 
 public class Controller
 {
@@ -32,43 +33,33 @@ public class Controller
   public void initialize()
   {
     manager = new VIAClubModelManager("players.bin", "matches.bin");
-    loadPlayersPane();
-    loadMatchesPane();
   }
 
-  public void loadPlayersPane()
+  public void handleActions(ActionEvent e)
   {
-    playersPane.setVisible(true);
-    matchesPane.setVisible(false);
-    playersTab.setStyle("-fx-background-color: #000037;-fx-font-size: 24px;fx-font-weight: bold;");
-    matchesTab.setStyle("-fx-background-color: #12123A;-fx-font-size: 24px;fx-font-weight: bold;");
-  }
-
-  public void loadMatchesPane()
-  {
-    playersPane.setVisible(false);
-    matchesPane.setVisible(true);
-    playersTab.setStyle("-fx-background-color: #12123A;-fx-font-size: 24px;fx-font-weight: bold;");
-    matchesTab.setStyle("-fx-background-color: #000037;-fx-font-size: 24px;fx-font-weight: bold;");
-  }
-
-  public void addPlayer()
-  {
-    if(manager.getPlayer(numberField.getText()) == null)
+    if (e.getSource() == savePlayerButton)
     {
-      Player newPlayer = new Player(nameField.getText(),numberField.getText(),positionBox.getSelectionModel().getSelectedItem(),suspensionField.getText());
-      nameField.clear();
-      numberField.clear();
-      suspensionField.clear();
+      String name = nameField.getText();
+      String number = numberField.getText();
+      String suspention = suspensionField.getText();
+      String position = positionBox.getSelectionModel().getSelectedItem();
 
-      manager.savePlayers("players.bin", newPlayer);
-      messageInformation("Member Added");
+      manager.savePlayers("players.bin", allPlayersArea);
     }
-    else
+    else if (e.getSource() == positionBox)
     {
-      messageWarning("A players with this number already exists");
+      String temp = positionBox.getSelectionModel().getSelectedItem();
+
+      if (temp != null)
+      {
+        positionBox.setAccessibleText("GK");
+        positionBox.setAccessibleText("Midfielder");
+        positionBox.setAccessibleText("Forward");
+        positionBox.setAccessibleText("Striker");
+      }
     }
   }
+
 
 
 
