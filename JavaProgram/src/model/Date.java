@@ -180,7 +180,6 @@ public class Date
   /**
    * Gets the day of tomorrow
    *
-   * @return a day after today
    */
   public void nextDay()
   {
