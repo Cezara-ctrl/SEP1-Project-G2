@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+  Copyright (c) 2015, 2019, Gluon and/or its affiliates.
+  All rights reserved. Use is subject to license terms.
+
+  This file is available and licensed under the following license:
+
+  Redistribution and use in source and binary forms, with or without
+  modification, are permitted provided that the following conditions
+  are met:
+
+  - Redistributions of source code must retain the above copyright
+    notice, this list of conditions and the following disclaimer.
+  - Redistributions in binary form must reproduce the above copyright
+    notice, this list of conditions and the following disclaimer in
+    the documentation and/or other materials provided with the distribution.
+  - Neither the name of Oracle Corporation nor the names of its
+    contributors may be used to endorse or promote products derived
+    from this software without specific prior written permission.
+
+  THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS
+  "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT
+  LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR
+  A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT
+  OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL,
+  SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT
+  LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE,
+  DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY
+  THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
+  (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
+  OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+-->
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckMenuItem?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.ScrollBar?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1">
+  <children>
+    <MenuBar VBox.vgrow="NEVER">
+      <menus>
+        <Menu mnemonicParsing="false" text="File">
+          <items>
+            <MenuItem fx:id="exitMenuButton" mnemonicParsing="false" text="Exit" />
+          </items>
+        </Menu>
+        <Menu mnemonicParsing="false" text="Edit">
+               <items>
+                  <CheckMenuItem fx:id="editPlayersMenuButton" mnemonicParsing="false" text="Edit players" />
+                  <CheckMenuItem fx:id="editMatchesMenuButton" mnemonicParsing="false" text="Edit matches" />
+               </items>
+        </Menu>
+        <Menu mnemonicParsing="false" text="About">
+          <items>
+            <MenuItem fx:id="aboutMenuButton" mnemonicParsing="false" text="About" />
+          </items>
+        </Menu>
+      </menus>
+    </MenuBar>
+      <TabPane tabClosingPolicy="UNAVAILABLE">
+        <tabs>
+          <Tab fx:id="playersTab" text="Players">
+            <content>
+              <AnchorPane fx:id="playersPane">
+                     <children>
+                        <Pane prefHeight="232.0" prefWidth="622.0">
+                           <children>
+                              <VBox layoutX="1.0" layoutY="12.0" prefHeight="235.0" prefWidth="204.0" spacing="8.0">
+                                 <children>
+                                    <Label prefHeight="18.0" prefWidth="76.0" text="Add Player" />
+                                    <TextField fx:id="nameField" disable="true" prefHeight="26.0" prefWidth="220.0" text="Name">
+                                       <opaqueInsets>
+                                          <Insets />
+                                       </opaqueInsets>
+                                       <padding>
+                                          <Insets bottom="8.0" left="8.0" right="8.0" top="8.0" />
+                                       </padding>
+                                    </TextField>
+                                    <TextField fx:id="numberField" disable="true" text="Number" />
+                                    <TextField fx:id="suspensionField" disable="true" text="Suspention time" />
+                                    <Label disable="true" text="Position" />
+                                    <ComboBox fx:id="positionBox" onAction="#handleActions" prefHeight="25.0" prefWidth="203.0" />
+                                    <Button fx:id="savePlayerButton" mnemonicParsing="false" onAction="#savePlayerInformation" onMouseClicked="#savePlayer" prefHeight="26.0" prefWidth="54.0" text="Save" />
+                                 </children>
+                                 <padding>
+                                    <Insets bottom="8.0" left="8.0" right="8.0" top="8.0" />
+                                 </padding>
+                              </VBox>
+                              <Button fx:id="removePlayerButton" layoutX="277.0" layoutY="14.0" mnemonicParsing="false" onAction="#removePlayerInformation" onMouseClicked="#removePlayer" prefHeight="25.0" prefWidth="99.0" text="Remove Player" />
+                              <Button fx:id="saveChangesButton" layoutX="457.0" layoutY="105.0" mnemonicParsing="false" onMouseClicked="#saveChanges" text="Save Changes" />
+                              <ComboBox fx:id="removePlayerBox" layoutX="396.0" layoutY="14.0" onAction="#handleActions" prefWidth="150.0" />
+                           </children>
+                           <padding>
+                              <Insets bottom="2.0" left="2.0" right="2.0" top="2.0" />
+                           </padding>
+                        </Pane>
+                        <Label layoutX="229.0" layoutY="230.0" text="List of players" />
+                        <HBox layoutY="346.0" prefHeight="36.0" prefWidth="622.0">
+                           <children>
+                              <Region prefHeight="36.0" prefWidth="135.0" />
+                              <Label prefHeight="34.0" prefWidth="92.0" text="Insta" />
+                              <Region prefHeight="36.0" prefWidth="92.0" HBox.hgrow="ALWAYS" />
+                              <Label prefHeight="34.0" prefWidth="66.0" text="Facebook" />
+                              <Region prefHeight="36.0" prefWidth="143.0" HBox.hgrow="ALWAYS" />
+                              <Label prefHeight="35.0" prefWidth="59.0" text="Youtube" />
+                              <Region prefHeight="36.0" prefWidth="138.0" HBox.hgrow="ALWAYS" />
+                           </children>
+                        </HBox>
+                        <HBox layoutX="3.0" layoutY="255.0" prefHeight="64.0" prefWidth="622.0">
+                           <children>
+                              <TextArea fx:id="allPlayersArea" prefHeight="77.0" prefWidth="608.0" HBox.hgrow="ALWAYS" />
+                              <ScrollBar orientation="VERTICAL" />
+                           </children>
+                        </HBox>
+                     </children>
+                  </AnchorPane>
+            </content>
+          </Tab>
+          <Tab fx:id="matchesTab" text="Matches">
+            <content>
+              <AnchorPane fx:id="matchesPane" minHeight="0.0" minWidth="0.0" prefHeight="371.0" prefWidth="621.0">
+                     <children>
+                        <Pane layoutX="5.0" layoutY="-4.0" prefHeight="389.0" prefWidth="614.0">
+                           <children>
+                              <HBox layoutX="371.0" layoutY="26.0" />
+                              <HBox layoutX="298.0" layoutY="208.0" prefHeight="107.0" prefWidth="315.0">
+                                 <children>
+                                    <TextArea prefHeight="107.0" prefWidth="317.0" />
+                                    <ScrollBar orientation="VERTICAL" />
+                                 </children>
+                              </HBox>
+                              <HBox layoutX="2.0" layoutY="361.0" prefHeight="26.0" prefWidth="622.0">
+                                 <children>
+                                    <Label prefHeight="37.0" prefWidth="69.0" text="Lorema" />
+                                    <Region prefHeight="42.0" prefWidth="106.0" HBox.hgrow="ALWAYS" />
+                                    <Label prefHeight="43.0" prefWidth="116.0" text="Ih sta siba lorema" />
+                                    <Region prefHeight="30.0" prefWidth="90.0" HBox.hgrow="ALWAYS" />
+                                    <Label prefHeight="36.0" prefWidth="66.0" text="Discord" />
+                                    <Region prefHeight="42.0" prefWidth="102.0" HBox.hgrow="ALWAYS" />
+                                    <Label prefHeight="38.0" prefWidth="75.0" text="Zoom" />
+                                    <Region prefHeight="38.0" prefWidth="97.0" />
+                                 </children>
+                              </HBox>
+                              <HBox layoutX="2.0" layoutY="208.0" prefHeight="106.0" prefWidth="282.0">
+                                 <children>
+                                    <TextArea prefHeight="152.0" prefWidth="270.0" />
+                                    <ScrollBar orientation="VERTICAL" prefHeight="152.0" prefWidth="0.0" />
+                                 </children>
+                              </HBox>
+                              <Label layoutX="14.0" layoutY="186.0" prefHeight="18.0" prefWidth="109.0" text="UpcomingMatches" />
+                              <VBox layoutX="1.0" layoutY="15.0" prefHeight="133.0" prefWidth="175.0">
+                                 <children>
+                                    <Label prefHeight="18.0" prefWidth="67.0" text="Add Match" />
+                                    <Region prefHeight="22.0" prefWidth="175.0" />
+                                    <TextField disable="true" text="model.Date" />
+                                    <ListView prefHeight="42.0" prefWidth="175.0" />
+                                    <Region prefHeight="44.0" prefWidth="175.0" />
+                                    <Button mnemonicParsing="false" text="Save changes" />
+                                 </children>
+                              </VBox>
+                              <HBox layoutX="321.0" layoutY="12.0" prefHeight="35.0" prefWidth="293.0">
+                                 <children>
+                                    <Button mnemonicParsing="false" prefHeight="26.0" prefWidth="104.0" text="Remove Match" />
+                                    <Region prefHeight="88.0" prefWidth="62.0" HBox.hgrow="ALWAYS" />
+                                    <ChoiceBox prefWidth="150.0" />
+                                 </children>
+                              </HBox>
+                              <Label layoutX="313.0" layoutY="186.0" prefHeight="18.0" prefWidth="74.0" text="AllMatches" />
+                           </children>
+                        </Pane>
+                     </children>
+                  </AnchorPane>
+            </content>
+          </Tab>
+        </tabs>
+      </TabPane>
+  </children>
+</VBox>
