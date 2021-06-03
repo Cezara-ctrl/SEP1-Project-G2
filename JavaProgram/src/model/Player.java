@@ -5,14 +5,14 @@ import java.util.Objects;
 public class Player
 {
   private String name;
-  private String number;
+  private int number;
   private String position;
   private boolean suspended;
   private boolean validPlayerForMatch;
   private String reason;
   private String suspensionDays;
 
-  public Player(String name, String number, String position, boolean suspended,
+  public Player(String name, int number, String position, boolean suspended,
       boolean validPlayerForMatch, String reason, String suspensionDays)
   {
     this.name = name;
@@ -24,7 +24,7 @@ public class Player
     this.suspensionDays = suspensionDays;
   }
 
-  public Player(String name, String number, String position, String suspensionDays)
+  public Player(String name, int number, String position, String suspensionDays)
   {
     this.name = name;
     this.number = number;
@@ -37,7 +37,7 @@ public class Player
     this.name = name;
   }
 
-  public void setNumber(String number)
+  public void setNumber(int number)
   {
     this.number = number;
   }
@@ -76,7 +76,7 @@ public class Player
     return name;
   }
 
-  public String getNumber()
+  public int getNumber()
   {
     return number;
   }

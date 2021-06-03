@@ -56,13 +56,13 @@ public class Team
     }
   }
 
-  public Player get(String name, String number, String position)
+  public Player get(String name, int number, String position)
   {
     for(int i = 0; i<players.size(); i++)
     {
       Player temp = players.get(i);
 
-      if(temp.getName().equals(name) && temp.getNumber().equals(number) && temp.getPosition().equals(position))
+      if(temp.getName().equals(name) && temp.getNumber()==(number) && temp.getPosition().equals(position))
       {
         return temp;
       }
@@ -70,13 +70,13 @@ public class Team
     return null;
   }
 
-  public int getIndex(String name, String number, String position)
+  public int getIndex(String name, int number, String position)
   {
     for(int i = 0; i<players.size(); i++)
     {
       Player temp = players.get(i);
 
-      if(temp.getName().equals(name) && temp.getNumber().equals(number) && temp.getPosition().equals(position))
+      if(temp.getName().equals(name) && temp.getNumber()==(number) && temp.getPosition().equals(position))
       {
         return i;
       }
