@@ -40,14 +40,14 @@ public class VIAClubModelManager
     return allPlayers;
   }
 
-  public Player getPlayer(String number)
+  public Player getPlayer(int number)
   {
     ArrayList<Player> players = getAllPlayers();
     Player player = null;
 
     for(int i = 0; i < players.size(); i++)
     {
-      if (players.get(i).getNumber().equals(number))
+      if (players.get(i).getNumber()==(number))
       {
         player = players.get(i);
         break;
@@ -250,16 +250,5 @@ public class VIAClubModelManager
     }
     return upcomingMatches;
   }
-
-
-
-
-
-
-
-
-
-
-
 
 }
